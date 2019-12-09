@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light espaciado">
+    <a class="navbar-brand" href="#">
+        <img src="../../../assets/images/dona sangre.png" width="150px" height="auto" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['inicio']">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Donar Sangre
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['requisitos']">Requisitos</a>
+                    <a class="dropdown-item" [routerLink]="['registrarse']">Registrarse</a>
+                    <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
+                    <a class="dropdown-item" href="#">Campañas de Donacion</a>
+                </div>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['requisitos']">Solicitar Donadores</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['requisitos']">Donacion Organos</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['requisitos']">Iniciar Sesion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
