@@ -29,30 +29,21 @@ export class RegistrarseComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLogin() : void{
-    console.log(this.ci);
-    console.log(this.fecha_nac);
-    console.log(this.genero);
-    console.log(this.organos);
-    
-    
-    
-    // this.authService.loginEmailUser(this.email, this.pass)
-    // .then((res)=> {
-    //   this.router.navigate(['inicio']);
-    // }).catch(err => console.log(err.message));
+  onAddUser(){
+    this.authService.registerUser(this.email, this.pass).then(res =>{
+      this.router.navigate(['inicio']);
+    }).catch(err => console.log(err.message));
+  }
+  
+  onLoginRedirect(): void{
+    this.router.navigate(['inicio']);
+
   }
 
   onLoginGoogle(){
     this.authService.loginGoogleUser().then((res)=>{
-      this.router.navigate(['inicio']);
-    }).catch(err => console.log(err.message));
-    // this.afAuth.auth.signInWithPopup( new auth.GoogleAuthProvider());
-  }
-
-  onLogout(){
-    // this.afAuth.auth.signOut();
-    this.authService.logoutUser();
+      this.onLoginRedirect();
+    }).catch(err => console.log(err.message));    
   }
 
 }

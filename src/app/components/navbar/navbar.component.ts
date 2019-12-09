@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,9 +11,12 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class NavbarComponent implements OnInit {
 
+  public email: string = '';
+  public pass: string ='';
+
   public isLogin : boolean = false;
 
-  constructor(private authService: AuthService, private afsAuth: AngularFireAuth) { }
+  constructor(private authService: AuthService, private afsAuth: AngularFireAuth,public afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
     this.siUsuarioAutentificado();
@@ -30,8 +34,28 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-  onLogout(){
-    this.afsAuth.auth.signOut();
+  onLogin() : void{    
+    
+    this.authService.loginEmailUser(this.email, this.pass)
+    .then((res)=> {
+      this.onLoginRedirect();
+      
+    }).catch(err => console.log(err.message));
+  }
+
+  onLoginGoogle(){
+    this.authService.loginGoogleUser().then((res)=>{
+      this.onLoginRedirect();
+    }).catch(err => console.log(err.message));    
+  }
+
+  onLogout(){    
+    this.authService.logoutUser();
+  }
+
+  onLoginRedirect(): void{
+    this.router.navigate(['inicio']);
+
   }
 
 }
