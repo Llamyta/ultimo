@@ -1,3 +1,4 @@
+import { UsuarioComponent } from './components/usuario/usuario.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
    { path: 'pntdon', component: PuntosdonacionComponent},
    { path: 'solicitadonadores', component: SolicitardonadoresComponent},
    { path: 'organos', component: DonacionorganosComponent},
+   { path: 'usuarios', component: UsuarioComponent},
    { path: '**', pathMatch: 'full', component: HomeComponent},
 ];
 
