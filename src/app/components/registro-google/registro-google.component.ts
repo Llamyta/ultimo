@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { PersonaRegistradaInterface } from '../../models/persona_registrada';
-import { DataApiService } from '../../services/data-api.service';
-
+import { AuthService } from 'src/app/services/auth.service';
+import { DataApiService } from 'src/app/services/data-api.service';
+import { PersonaRegistradaInterface } from 'src/app/models/persona_registrada';
 
 @Component({
-  selector: 'app-registrarse',
-  templateUrl: './registrarse.component.html',
-  styleUrls: ['./registrarse.component.css']
+  selector: 'app-registro-google',
+  templateUrl: './registro-google.component.html',
+  styleUrls: ['./registro-google.component.css']
 })
-export class RegistrarseComponent implements OnInit {
+export class RegistroGoogleComponent implements OnInit {
 
   ci: string ='';
   nombre: string = '';
@@ -31,7 +29,8 @@ export class RegistrarseComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddUser(){
+
+  guardarGoogle(){
     let persona: PersonaRegistradaInterface= {
       ci: this.ci,
       nombre: this.nombre,
@@ -46,25 +45,9 @@ export class RegistrarseComponent implements OnInit {
       sangre: this.sangre,
       id: ''
     }    
-    
     this.personaServices.agregarPersonaRegistro(persona);
-    this.authService.registerUser(this.email, this.pass).then(res =>{
-      this.router.navigate(['inicio']);
-    }).catch(err => console.log(err.message));
-  }
-  
-  onLoginRedirect(): void{
     this.router.navigate(['inicio']);
 
+
   }
-
-  onLoginGoogle(){    
-    
-    this.authService.loginGoogleUser().then((res)=>{
-      this.router.navigate(['google']);
-    }).catch(err => console.log(err.message));    
-  }
-
-  
-
 }

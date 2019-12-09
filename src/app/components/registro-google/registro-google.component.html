@@ -1,0 +1,50 @@
+<h1 style="text-align: center; padding-top: 100px; font-size: 40px;
+    font-family: 'learning curve';" class="mt-lg-5 mb-5">Ya casi esta...</h1>
+<hr>
+<form class="container">
+    <div class="form-group">
+        <label for="ci">Carnet de Identidad</label>
+        <input name="ci" [(ngModel)]="ci" type="text" class="form-control" id="ci" placeholder="C.I.">
+    </div>
+    <div class="form-group">
+        <label for="fnac">Fecha de Nacimiento</label>
+        <input name="fecha_nac" [(ngModel)]="fecha_nac" type="date" class="form-control" id="fnac" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+        <label for="genero">Genero</label>
+        <select id="genero" name="genero" [(ngModel)]="genero" class="form-control">
+              <option selected>Choose...</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="tiposangre">Tipo de Sangre</label>
+        <select id="tiposangre" name="tipo_sangre" [(ngModel)]="tipo_sangre" class="form-control">
+              <option selected>Choose...</option>
+              <option>A</option>
+              <option>B</option>                  
+              <option>O</option>                  
+              <option>O+</option>
+              <option>O-</option>                  
+            </select>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" name="NAME" [checked]="organos" (change)="organos = !organos" type="checkbox" id="organos">
+            <label class="form-check-label" for="organos">
+                  Donador de Organos
+                </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" name="NAME" [checked]="sangre" (change)="sangre = !sangre" type="checkbox" id="sangre">
+            <label class="form-check-label" for="sangre">
+                  Donador de Sangre
+                </label>
+        </div>
+    </div>
+    <button type="button" (click)="guardarGoogle()" class="btn btn-primary">Guardar</button>
+
+</form>

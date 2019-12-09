@@ -22,6 +22,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from "@angular/fire/storage";
+import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AngularFireStorage } from "@angular/fire/storage";
     CampaniasdonacionComponent,
     SolicitardonadoresComponent,
     DonacionorganosComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    RegistroGoogleComponent
   ],
   imports: [
     BrowserModule,

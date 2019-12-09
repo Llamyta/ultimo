@@ -7,6 +7,7 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
 import { PuntosdonacionComponent } from './components/puntosdonacion/puntosdonacion.component';
 import { SolicitardonadoresComponent } from './components/solicitardonadores/solicitardonadores.component';
 import { DonacionorganosComponent } from './components/donacionorganos/donacionorganos.component';
+import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
 
 
 
@@ -15,6 +16,7 @@ import { DonacionorganosComponent } from './components/donacionorganos/donaciono
 
 const routes: Routes = [
    { path: 'inicio', component: HomeComponent},
+   { path: 'google', component: RegistroGoogleComponent},
    { path: 'requisitos', component: RequisitosComponent},
    { path: 'registrarse', component: RegistrarseComponent},
    { path: 'pntdon', component: PuntosdonacionComponent},

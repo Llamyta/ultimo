@@ -5,7 +5,7 @@ import { AngularFireStorage } from "@angular/fire/storage";
 import { Observable } from "rxjs/internal/Observable";
 import { finalize } from "rxjs/operators";
 import Swal from 'sweetalert2'
-import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-solicitardonadores',
@@ -48,7 +48,7 @@ export class SolicitardonadoresComponent implements OnInit {
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Se guardo correctamente',
         showConfirmButton: false,
         timer: 1500
       })
