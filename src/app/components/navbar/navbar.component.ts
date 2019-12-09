@@ -20,6 +20,17 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.siUsuarioAutentificado();
+    const menu = document.getElementById("menu1");
+    const altura = menu.offsetTop;
+    // const altura = 150;
+    window.addEventListener("scroll", function() {
+      if (window.pageYOffset > altura) {
+        menu.classList.add("color-nav");
+      } else {
+        menu.classList.remove("color-nav");
+        menu.classList.add("color-nav2");
+      }
+    });
   }
 
   siUsuarioAutentificado(){

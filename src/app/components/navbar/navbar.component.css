@@ -15,3 +15,24 @@
     width: 272px !important;
     padding: 10px 0 10px 0 !important;
 }
+
+.App-header {
+    position: absolute;
+    left: 0;
+    padding: 0 250px;
+    padding-bottom: 20px;
+    background: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.774);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.color-nav {
+    background: #4CBCB3;
+    padding-bottom: 0px;
+    transition: 0.5s;
+}
+
+.color-nav2 {
+    transition: 0.5s;
+}
