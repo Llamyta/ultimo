@@ -17,38 +17,38 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="ci">Carnet de Identidad</label>
-                    <input [(ngModel)]="ci" type="text" class="form-control" id="ci" placeholder="C.I.">
+                    <input name="ci" [(ngModel)]="ci" type="text" class="form-control" id="ci" placeholder="C.I.">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="nombre">Nombre(s)</label>
-                    <input [(ngModel)]="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <input name="nombre" [(ngModel)]="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="ap">Apellido Paterno</label>
-                    <input [(ngModel)]="apellido_p" type="text" class="form-control" id="ap" placeholder="Apellido">
+                    <input name="apellido_p" [(ngModel)]="apellido_p" type="text" class="form-control" id="ap" placeholder="Apellido">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="am">Apellido Materno</label>
-                    <input [(ngModel)]="apellido_m" type="text" class="form-control" id="am" placeholder="Apellido">
+                    <input name="apellido_m" [(ngModel)]="apellido_m" type="text" class="form-control" id="am" placeholder="Apellido">
                 </div>
             </div>
             <div class="form-group">
                 <label for="fnac">Fecha de Nacimiento</label>
-                <input [(ngModel)]="fecha_nac" type="date" class="form-control" id="fnac" placeholder="1234 Main St">
+                <input name="fecha_nac" [(ngModel)]="fecha_nac" type="date" class="form-control" id="fnac" placeholder="1234 Main St">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="genero">Genero</label>
-                    <select id="genero" [(ngModel)]="genero" class="form-control">
+                    <select id="genero" name="genero" [(ngModel)]="genero" class="form-control">
                   <option selected>Choose...</option>
                   <option>...</option>
                 </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="tiposangre">Tipo de Sangre</label>
-                    <select id="tiposangre" [(ngModel)]="tipo_sangre" class="form-control">
+                    <select id="tiposangre" name="tipo_sangre" [(ngModel)]="tipo_sangre" class="form-control">
                   <option selected>Choose...</option>
                   <option>...</option>
                 </select>
@@ -56,17 +56,17 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input name="email" [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input [(ngModel)]="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input name="pass" [(ngModel)]="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" [(ngModel)]="organos" type="checkbox" id="organos">
+                        <input class="form-check-input" name="NAME" [checked]="organos" (change)="organos = !organos" type="checkbox" id="organos">
                         <label class="form-check-label" for="organos">
                       Donador de Organos
                     </label>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" [(ngModel)]="sangre" type="checkbox" id="sangre">
+                        <input class="form-check-input" name="NAME" [checked]="sangre" (change)="sangre = !sangre" type="checkbox" id="sangre">
                         <label class="form-check-label" for="sangre">
                       Donador de Sangre
                     </label>
