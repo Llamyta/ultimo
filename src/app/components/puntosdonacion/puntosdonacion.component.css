@@ -2,23 +2,6 @@
     padding: 10% 15% 5% 15%;
 }
 
-.imagenfondo {
-    background-image: url('../../../assets/images/logoparafondo10.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: "no-repeat";
-    text-align: center;
-}
-
-.imagenfondo2 {
-    background-image: url('../../../assets/images/fondoseccionrequisitos.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: "no-repeat";
-    height: 400px;
-    opacity: 80%;
-}
-
 .col {
     display: flex !important;
     align-items: center !important;
