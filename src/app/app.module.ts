@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,13 @@ import { PuntosdonacionComponent } from './components/puntosdonacion/puntosdonac
 import { CampaniasdonacionComponent } from './components/campaniasdonacion/campaniasdonacion.component';
 import { SolicitardonadoresComponent } from './components/solicitardonadores/solicitardonadores.component';
 import { DonacionorganosComponent } from './components/donacionorganos/donacionorganos.component';
+
+// Firebase
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +36,12 @@ import { DonacionorganosComponent } from './components/donacionorganos/donaciono
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -91,6 +91,10 @@ h1 {
     padding: 40% 2% 2% 2%;
 }
 
+.separador-seccion {
+    margin-bottom: 20%;
+}
+
 @media screen and (max-width: 988px) {
     h1 {
         font-family: learning curve;

@@ -1,7 +1,7 @@
 <section id="seccion">
     <div class="centreado">
         <h1 class="encabezado">Formulario de Registro</h1>
-        <button type="button" class="btn btn-primary boton">
+        <button type="button" class="btn btn-primary boton" (click)="onLoginGoogle()">
             <img class="imagen" src="../../../assets/images/google.jpg">
               Iniciar sesion con google
             
@@ -13,42 +13,42 @@
 </section>
 <section id="seccion">
     <div>
-        <form>
+        <form #formLogin="ngForm" (ngSubmit)="onLogin()">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="ci">Carnet de Identidad</label>
-                    <input type="text" class="form-control" id="ci" placeholder="C.I.">
+                    <input [(ngModel)]="ci" type="text" class="form-control" id="ci" placeholder="C.I.">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="nombre">Nombre(s)</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <input [(ngModel)]="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="ap">Apellido Paterno</label>
-                    <input type="text" class="form-control" id="ap" placeholder="Apellido">
+                    <input [(ngModel)]="apellido_p" type="text" class="form-control" id="ap" placeholder="Apellido">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="am">Apellido Materno</label>
-                    <input type="text" class="form-control" id="am" placeholder="Apellido">
+                    <input [(ngModel)]="apellido_m" type="text" class="form-control" id="am" placeholder="Apellido">
                 </div>
             </div>
             <div class="form-group">
                 <label for="fnac">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="fnac" placeholder="1234 Main St">
+                <input [(ngModel)]="fecha_nac" type="date" class="form-control" id="fnac" placeholder="1234 Main St">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="genero">Genero</label>
-                    <select id="genero" class="form-control">
+                    <select id="genero" [(ngModel)]="genero" class="form-control">
                   <option selected>Choose...</option>
                   <option>...</option>
                 </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="tiposangre">Tipo de Sangre</label>
-                    <select id="tiposangre" class="form-control">
+                    <select id="tiposangre" [(ngModel)]="tipo_sangre" class="form-control">
                   <option selected>Choose...</option>
                   <option>...</option>
                 </select>
@@ -56,17 +56,17 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input [(ngModel)]="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="organos">
+                        <input class="form-check-input" [(ngModel)]="organos" type="checkbox" id="organos">
                         <label class="form-check-label" for="organos">
                       Donador de Organos
                     </label>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sangre">
+                        <input class="form-check-input" [(ngModel)]="sangre" type="checkbox" id="sangre">
                         <label class="form-check-label" for="sangre">
                       Donador de Sangre
                     </label>
