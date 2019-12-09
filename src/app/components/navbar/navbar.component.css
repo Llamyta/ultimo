@@ -1,3 +1,17 @@
 .espaciado {
     padding: 0 15% 0 15%;
 }
+
+.imagen {
+    height: 36px;
+    margin-right: 5%;
+}
+
+.centreado {
+    text-align: center;
+}
+
+.boton {
+    width: 272px !important;
+    padding: 10px 0 10px 0 !important;
+}

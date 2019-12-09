@@ -18,8 +18,15 @@ h1 {
     width: 100%;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
 .centreado {
-    text-align: right;
+    text-align: center;
 }
 
 .encabezado {

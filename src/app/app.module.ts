@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
     PuntosdonacionComponent,
     CampaniasdonacionComponent,
     SolicitardonadoresComponent,
-    DonacionorganosComponent
+    DonacionorganosComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
