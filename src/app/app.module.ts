@@ -20,6 +20,8 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from "@angular/fire/storage";
 
 
 @NgModule({
@@ -43,7 +45,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
-providers: [AngularFireAuth],
+providers: [AngularFireAuth,AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
