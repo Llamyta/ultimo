@@ -1,7 +1,6 @@
 .espaciado {
-    padding: 0 15% 0 15%;
+    padding: 0 15% 10px 15%;
 }
-
 .imagen {
     height: 36px;
     margin-right: 5%;
@@ -15,6 +14,7 @@
     width: 272px !important;
     padding: 10px 0 10px 0 !important;
 }
+
 
 .App-header {
     position: absolute;
@@ -34,4 +34,135 @@
 
 .color-nav2 {
     transition: 0.5s;
+}
+
+
+
+
+
+.menu-fixed {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.color-nav {
+    background: #4CBCB3;
+    padding-bottom: 0px;
+    transition: 0.5s;
+}
+
+
+/* Aca Comienza el menu del home */
+
+header {
+    position: absolute;
+    left: 0;
+    padding: 0 100px;
+    padding-bottom: 20px;
+    transition: 0.5s;
+    background: #ffffff3b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.774);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header.header a img.logo {
+    color: black;
+    height: 60px;
+    width: 60px;
+    float: left;
+    padding: 5px;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none !important;
+    display: block;
+}
+
+header nav ul li a:hover {
+    color: white;
+    background: #F1414E;
+}
+
+header nav ul li a:hover {
+    color: white;
+    background: #F1414E;
+}
+
+.activee {
+    color: white;
+    background: #F1414E;
+}
+
+.menu-toggle {
+    color: black;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 0 20px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 65%;
+        height: calc(100vh - 50px);
+        background: #4CBCB3;
+        top: 60px;
+        left: -100%;
+        transition: 0.5s;
+    }
+    header nav.active {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        border-bottom: 1px solid rgba(0, 0, 0, .2)
+    }
+}
+
+.der-ini {
+    background: rgb(119, 119, 119);
+    cursor: pointer;
+}
+
+.der-reg {
+    background: rgb(119, 119, 119);
+    cursor: pointer;
+}
+
+.boton-nav {
+    cursor: pointer;
+    margin-top: 10px;
 }

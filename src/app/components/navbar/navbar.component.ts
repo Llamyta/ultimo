@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,13 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.siUsuarioAutentificado();
+
+
+    $(document).ready(function() {
+      $(".menu-toggle").click(function() {
+        $("nav").toggleClass("active");
+      });
+    });
     const menu = document.getElementById("menu1");
     const altura = menu.offsetTop;
     // const altura = 150;

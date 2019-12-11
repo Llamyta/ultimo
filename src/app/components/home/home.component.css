@@ -52,7 +52,7 @@ h1 {
 .flip-card {
     background-color: transparent;
     width: 239px;
-    height: 220px;
+    height: 239px;
     background-color: #F2F2F2;
     perspective: 1000px;
 }
