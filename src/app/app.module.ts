@@ -13,6 +13,7 @@ import { PuntosdonacionComponent } from './components/puntosdonacion/puntosdonac
 import { CampaniasdonacionComponent } from './components/campaniasdonacion/campaniasdonacion.component';
 import { SolicitardonadoresComponent } from './components/solicitardonadores/solicitardonadores.component';
 import { DonacionorganosComponent } from './components/donacionorganos/donacionorganos.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // Firebase
 import { environment } from '../environments/environment';
@@ -45,7 +46,8 @@ import { RegistroGoogleComponent } from './components/registro-google/registro-g
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFontAwesomeModule
   ],
 providers: [AngularFireAuth,AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent]

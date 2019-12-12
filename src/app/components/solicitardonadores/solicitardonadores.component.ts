@@ -43,14 +43,14 @@ export class SolicitardonadoresComponent implements OnInit {
 
   guardarSolicitud(form: NgForm) {    
     form.value.foto = this.inputFoto.nativeElement.value;
-      this.dataApi.agregarsolicitudSangre(form.value);    
-      form.resetForm();      
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Se guardo correctamente',
-        showConfirmButton: false,
-        timer: 1500
-      })
+    this.dataApi.agregarsolicitudSangre(form.value);    
+    form.resetForm();            
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Se guardo correctamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 }

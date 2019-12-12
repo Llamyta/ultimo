@@ -27,14 +27,14 @@
                             "./node_modules/bootstrap/dist/css/bootstrap.css",
                             "./node_modules/mdbootstrap/css/mdb.css",    
                             "./src/assets/slick/slick.css",
-                            "./src/assets/slick/slick-theme.css",
+                            "./src/assets/slick/slick-theme.css",                            
                             "src/styles.css"
                         ],
                         "scripts": [
                             "./node_modules/jquery/dist/jquery.min.js",
                             "./node_modules/popper.js/dist/umd/popper.js",
                             "./node_modules/bootstrap/dist/js/bootstrap.js",
-                            "./node_modules/mdbootstrap/js/mdb.js",
+                            "./node_modules/mdbootstrap/js/mdb.js",                            
                             "./src/assets/slick/slick.min.js"
                         ]
                     },

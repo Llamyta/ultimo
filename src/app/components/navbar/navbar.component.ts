@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 declare var jQuery: any;
 declare var $: any;
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-navbar',
@@ -58,8 +59,15 @@ export class NavbarComponent implements OnInit {
     this.authService.loginEmailUser(this.email, this.pass)
     .then((res)=> {
       this.onLoginRedirect();
-      
-    }).catch(err => console.log(err.message));
+      if (this.email == "" && this.pass == "") {
+        
+      }      
+    }).catch(err => 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'El usuario no esta registrado'        
+      }));
   }
 
   onLoginGoogle(){

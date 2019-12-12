@@ -2,6 +2,18 @@
     padding: 10% 15% 5% 15%;
 }
 
+/* FORMULARIOS VALIDACION */
+
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+}
+
+
+
+
+
+/* FIN FORMULARIOS VALIDACION */
+
 h1 {
     font-family: learning curve;
     size: 60px;
