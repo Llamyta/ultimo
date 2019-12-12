@@ -73,7 +73,12 @@ export class NavbarComponent implements OnInit {
   onLoginGoogle(){
     this.authService.loginGoogleUser().then((res)=>{
       this.onLoginRedirect();
-    }).catch(err => console.log(err.message));    
+    }).catch(err => 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo un error en red'        
+      }));    
   }
 
   onLogout(){    
