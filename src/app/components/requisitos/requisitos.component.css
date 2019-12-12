@@ -1,6 +1,11 @@
 #seccion {
-    padding: 5% 15% 5% 15%;
+    padding: 100% 15% 5% 15%;    
 }
+
+.seccionModil{
+    padding-top: 10%;
+}
+
 
 .imagenfondo {
     background-image: url('../../../assets/images/logoparafondo10.png');
@@ -64,5 +69,8 @@ p {
     }
     .im {
         height: 200px;
+    }
+    .seccionModil{
+        padding-top: 120px!important;
     }
 }
