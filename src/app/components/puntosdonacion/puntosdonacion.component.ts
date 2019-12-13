@@ -11,6 +11,9 @@ declare var $: any;
   styleUrls: ["./puntosdonacion.component.css"]
 })
 export class PuntosdonacionComponent implements OnInit {
+
+  diferenciadorModalVar: string;
+
   constructor(public hospitalesServices: HospitalesService) {}
 
   public hospitales: any[] = [];
@@ -31,7 +34,9 @@ export class PuntosdonacionComponent implements OnInit {
     this.hospitalesServices.obtenerHospitalRegistro().subscribe( resp =>{
       this.hospitales = resp;
     });
+  }
 
-
+  diferenciadorModal(id): void{
+    this.diferenciadorModalVar = id;
   }
 }

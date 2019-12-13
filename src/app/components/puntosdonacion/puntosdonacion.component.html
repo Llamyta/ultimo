@@ -8,61 +8,111 @@
   <div class="container">
     <!-- <button type="button" class="slick-prev" >Previous</button> -->
     <!-- <button type="button" class="slick-next">Next</button> -->
+    <!-- Desde aca esta solo estatico-->
     <div class="your-class">
-      <div style="width: 370px;" *ngFor="let item of hospitales">
-        <!-- CARD -->
-        <div class="cards" data-toggle="modal" data-target="#exampleModal1">
-          <article class="card card--1">
-            <div class="card__img"></div>
-            <a class="card_link">
-              <div
-                class="card__img--hover"
-                style="background-image: url('../../../assets/images/belga.jpg');"
-              ></div>
-            </a>
-            <div class="card__info">
-              <h3 class="card__category">Centro:{{ item.hospital }}</h3>
-              <h3 class="card__category">Telefono:{{ item.telefono }}</h3>
+      <div class="cards" data-toggle="modal" data-target="#exampleModal1">
+        <article class="card card--1">
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div
+              class="card__img--hover"
+              style="background-image: url('../../../assets/images/belga.jpg');"
+            ></div>
+          </a>
+          <div class="card__info">
+            <h3 class="card__category">Centro:</h3>
+            <h3 class="card__category">Telefono:</h3>
+          </div>
+        </article>
+      </div>
+      <div class="cards" data-toggle="modal" data-target="#exampleModal1">
+        <article class="card card--1">
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div
+              class="card__img--hover"
+              style="background-image: url('../../../assets/images/belga.jpg');"
+            ></div>
+          </a>
+          <div class="card__info">
+            <h3 class="card__category">Centro:</h3>
+            <h3 class="card__category">Telefono:</h3>
+          </div>
+        </article>
+      </div>
+      <div class="cards" data-toggle="modal" data-target="#exampleModal1">
+        <article class="card card--1">
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div
+              class="card__img--hover"
+              style="background-image: url('../../../assets/images/belga.jpg');"
+            ></div>
+          </a>
+          <div class="card__info">
+            <h3 class="card__category">Centro:</h3>
+            <h3 class="card__category">Telefono:</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+
+
+
+    <!-- Desde aca esta con la bd -->
+    <div  *ngFor="let item of hospitales">
+      <!-- CARD -->
+      <div class="cards" data-toggle="modal" data-target="#exampleModal1" (click)="diferenciadorModal(item.telefono)">
+        <article class="card card--1">
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div
+              class="card__img--hover"
+              style="background-image: url('../../../assets/images/belga.jpg');"
+            ></div>
+          </a>
+          <div class="card__info">
+            <h3 class="card__category">Centro:{{ item.hospital }}</h3>
+            <h3 class="card__category">Telefono:{{ item.telefono }}</h3>
+          </div>
+        </article>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal1"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          </article>
-        </div>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="exampleModal1"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">
-                  Save changes
-                </button>
-              </div>
+            <div class="modal-body">
+              <!-- ACA IR EL FORMULARIO DE CITAS-->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
             </div>
           </div>
         </div>
