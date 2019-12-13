@@ -67,13 +67,17 @@ export class NavbarComponent implements OnInit {
     .then((res)=> {
       this.onLoginRedirect();
       if (this.email == "" && this.pass == "") {
-        
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error al iniciar sesion'        
+        })
       }      
     }).catch(err => 
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'El usuario no esta registrado'        
+        text: 'El usuario no esta registrado o su password esta incorrecto'        
       }));
   }
 
