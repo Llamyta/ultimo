@@ -182,7 +182,30 @@ body {
     .im {
         height: 200px;
     }
+    .card {
+        margin-right: 0;
+        width: 100%;
+    }
+    .encabezado {
+        padding-top: 15% !important;
+    }
 }
 
-
-/* SLIM */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-family: learning curve;
+        font-size: 2rem;
+        color: white;
+        font-weight: bold;
+    }
+    .im {
+        height: 200px;
+    }
+    .card {
+        margin-right: 0;
+        width: 100%;
+    }
+    .encabezado {
+        padding-top: 20% !important;
+    }
+}
