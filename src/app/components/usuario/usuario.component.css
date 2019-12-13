@@ -1,3 +1,46 @@
+#seccion {
+    padding: 10% 15% 10% 15% !important;
+}
+
+.col {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 40vh !important;
+}
+
+h1 {
+    font-family: learning curve;
+    size: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+p {
+    font-weight: lighter;
+}
+
+.encabezado {
+    color: #2E2E2E;
+    text-align: center;
+    padding: 10% 0 5% 0;
+}
+
+.tarjeta {
+    border: none;
+    background-color: transparent;
+}
+
+.imagen {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+/*cards*/
+
 body,
 html {
     font-family: sans-serif;
@@ -19,10 +62,6 @@ body {
     display: flex;
     justify-content: center;
     max-width: 820px;
-}
-
-.card--1 .card__img--hover {
-    background-image: url(../../../assets/images/google.jpg);
 }
 
 .card__time {
@@ -71,7 +110,7 @@ body {
     margin-right: 25px;
     transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
     background-color: #fff;
-    width: 33.3%;
+    width: 80%;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
