@@ -79,7 +79,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 100% !important;
     height: 235px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
