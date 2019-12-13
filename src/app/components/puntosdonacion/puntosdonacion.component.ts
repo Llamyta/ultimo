@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { HospitalesService } from '../../services/hospitales.service';
+
 
 declare var jQuery: any;
 declare var $: any;
@@ -9,9 +11,12 @@ declare var $: any;
   styleUrls: ["./puntosdonacion.component.css"]
 })
 export class PuntosdonacionComponent implements OnInit {
-  constructor() {}
+  constructor(public hospitalesServices: HospitalesService) {}
+
+  public hospitales: any[] = [];
 
   ngOnInit() {
+    
     $(document).ready(function() {
       $(".your-class").slick({
         slidesToShow: 3,
@@ -22,5 +27,11 @@ export class PuntosdonacionComponent implements OnInit {
         arrows: true,
       });
     });
+    // Recupera todos los hopitales
+    this.hospitalesServices.obtenerHospitalRegistro().subscribe( resp =>{
+      this.hospitales = resp;
+    });
+
+
   }
 }
