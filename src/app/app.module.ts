@@ -24,6 +24,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from "@angular/fire/storage";
 import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
+import { HospitalesComponent } from './components/hospitales/hospitales.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { RegistroGoogleComponent } from './components/registro-google/registro-g
     SolicitardonadoresComponent,
     DonacionorganosComponent,
     UsuarioComponent,
-    RegistroGoogleComponent
+    RegistroGoogleComponent,
+    HospitalesComponent
   ],
   imports: [
     BrowserModule,

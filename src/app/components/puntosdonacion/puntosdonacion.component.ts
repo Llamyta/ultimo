@@ -17,7 +17,7 @@ export class PuntosdonacionComponent implements OnInit {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 1000,
         dots: true,
         arrows: true,
       });

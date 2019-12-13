@@ -1,0 +1,56 @@
+#seccion {
+    padding: 10% 15% 5% 15%;
+}
+
+.col {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 40vh !important;
+}
+
+h1 {
+    font-family: learning curve;
+    size: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+p {
+    font-weight: lighter;
+}
+
+.encabezado {
+    color: #2E2E2E;
+    text-align: center;
+    padding: 10% 0 5% 0;
+}
+
+.tarjeta {
+    border: none;
+    background-color: transparent;
+}
+
+.imagen {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 988px) {
+    h1 {
+        font-family: learning curve;
+        font-size: 2rem;
+        color: white;
+        font-weight: bold;
+    }
+    .im {
+        height: 200px;
+    }
+}
+
+
+
+/* SLIM */
+

@@ -1,3 +1,5 @@
+import { HospitalesComponent } from './components/hospitales/hospitales.component';
+import { CampaniasdonacionComponent } from './components/campaniasdonacion/campaniasdonacion.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,10 +12,6 @@ import { DonacionorganosComponent } from './components/donacionorganos/donaciono
 import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
 
 
-
-
-
-
 const routes: Routes = [
    { path: 'inicio', component: HomeComponent},
    { path: 'google', component: RegistroGoogleComponent},
@@ -23,6 +21,8 @@ const routes: Routes = [
    { path: 'solicitadonadores', component: SolicitardonadoresComponent},
    { path: 'organos', component: DonacionorganosComponent},
    { path: 'usuarios', component: UsuarioComponent},
+   { path: 'campaniaDonacion', component: CampaniasdonacionComponent},
+   { path: 'hospitales', component: HospitalesComponent},
    { path: '**', pathMatch: 'full', component: HomeComponent},
 ];
 
