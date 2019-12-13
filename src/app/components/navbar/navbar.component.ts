@@ -17,12 +17,19 @@ export class NavbarComponent implements OnInit {
   public pass: string ='';
 
   public isLogin : boolean = false;
+  public fotoUsuario: string;
 
   constructor(private authService: AuthService, private afsAuth: AngularFireAuth,public afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
     this.siUsuarioAutentificado();
 
+
+    this.authService.isAuth().subscribe(user => {
+      if (user) {
+        this.fotoUsuario = user.photoURL;
+      }
+    })
 
     $(document).ready(function() {
       $(".menu-toggle").click(function() {

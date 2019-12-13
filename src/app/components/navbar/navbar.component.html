@@ -74,17 +74,14 @@
                     <a class="boton-nav" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
                 </li>
                 <li *ngIf="isLogin" class="nav-item dropdown" routerLinkActive="activee">
-                    <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="../../../assets/images/person1.jpg" class='imgRedonda'>
+                    <a class="boton-nav dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{fotoUsuario}}" *ngIf="fotoUsuario" class='imgRedonda'>
+                        <img src="../../../assets/images/personaperfil.jpg" *ngIf="!fotoUsuario" class='imgRedonda'>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a (click)="onLogout()" class="boton-nav" style="cursor: pointer;">Cerrar Sesion</a>
                     </div>
                 </li>
-
-
-
-
             </ul>
         </nav>
         <div class="menu-toggle"><i class="fas fa-bars"></i> </div>
