@@ -1,46 +1,64 @@
-<section id="seccion ">
+<section id="seccion">
   <div>
     <h1 class="encabezado">Puntos de Donacion habilitados</h1>
   </div>
-  <div style="background: #4CBCB3; padding: 60px 0 60px 0;">
-   
+  <div style=" padding: 60px 0 60px 0;">
     <div class="container">
-      <div *ngFor="let item of hospitales" >
-        <div class="cards" >
-         
-          <article class="card card--1">
-            <div class="card__img"></div>
-            <a class="card_link">
-              <div class="card__img--hover" style="background-image: url('../../../assets/images/belga.jpg');"
-                data-toggle="modal" data-target="#exampleModal1" (click)="diferenciadorModal(item.telefono)"></div>
-            </a>
-            <div class="card__info">
-              <h3 class="card__category">Centro:{{ item.hospital }}</h3>
-              <h3 class="card__category">Telefono:{{ item.telefono }}</h3>
-            </div>
-          </article>
+      <div class="row row-cols-1 row-cols-md-3" >
+
+        <div class="col mb-4" *ngFor="let item of hospitales">
+          <div class="card" data-toggle="modal" data-target="#exampleModal1">
+            <img src="{{item.foto}} " class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{item.hospital}}</h5>
+              <h5 class="card-title">{{item.telefono}}</h5>
+          </div>
         </div>
-  
+      </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal1"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <!-- ACA IR EL FORMULARIO DE CITAS-->
+        
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="fecha">Seleccione la fecha para la Donacion</label>
+                <input name="fecha" type="date" class="form-control" id="fecha" required placeholder="1234 Main St">
+            </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="hora">Seleccione la Hora para la Donacion</label>
+                <input name="hora" type="time" class="form-control" id="hora" required placeholder="1234 Main St">
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
