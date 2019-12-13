@@ -44,80 +44,85 @@
 </nav> -->
 
 <div class="menu-fixed">
-  <header class="header espaciado" id="menu1">
-    <a [routerLink]="['inicio']">
-        <img src="../../../assets/images/dona sangre.png" width="150px" height="auto" alt="">
-    </a>
-    <nav>
-      <ul>
-        <li routerLinkActive="activee">
-          <a class="boton-nav" [routerLink]="['inicio']">Inicio </a>
-        </li>
-        <li class="nav-item dropdown" routerLinkActive="activee">
-          <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <header class="header espaciado" id="menu1">
+        <a [routerLink]="['inicio']">
+            <img src="../../../assets/images/dona sangre.png" width="150px" height="auto" alt="">
+        </a>
+        <nav>
+            <ul>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['inicio']">Inicio </a>
+                </li>
+                <li class="nav-item dropdown" routerLinkActive="activee">
+                    <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Donar Sangre
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" [routerLink]="['requisitos']">Requisitos</a>
-            <a class="dropdown-item" [routerLink]="['registrarse']">Registrarse</a>
-            <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
-            <a class="dropdown-item" [routerLink]="['campaniaDonacion']"  >Campañas de Donacion</a>
-          </div>
-        </li>
-        <li routerLinkActive="activee">
-          <a class="boton-nav" [routerLink]="['solicitadonadores']">Solicitar Donadores</a>
-        </li>
-        <li routerLinkActive="activee">
-          <a class="boton-nav" [routerLink]="['organos']">Donacion Organos</a>
-        </li>
-        <li style="cursor: pointer;" routerLinkActive="activee" *ngIf="!isLogin">
-          <a class="boton-nav" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
-        </li>
-        <li *ngIf="isLogin">
-          <a (click)="onLogout()" class="boton-nav" style="cursor: pointer;">Cerrar Sesion</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="menu-toggle"><i class="fas fa-bars"></i> </div>
-  </header>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['requisitos']">Requisitos</a>
+                        <a class="dropdown-item" [routerLink]="['registrarse']">Registrarse</a>
+                        <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
+                        <a class="dropdown-item" [routerLink]="['campaniaDonacion']">Campañas de Donacion</a>
+                    </div>
+                </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['solicitadonadores']">Solicitar Donadores</a>
+                </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['organos']">Donacion Organos</a>
+                </li>
+                <li style="cursor: pointer;" routerLinkActive="activee" *ngIf="!isLogin">
+                    <a class="boton-nav" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown" routerLinkActive="activee">
+                    <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../../../assets/images/person1.jpg" class='imgRedonda'>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a (click)="onLogout()" class="boton-nav" style="cursor: pointer;">Cerrar Sesion</a>
+                    </div>
+                </li>
+
+
+
+
+            </ul>
+        </nav>
+        <div class="menu-toggle"><i class="fas fa-bars"></i> </div>
+    </header>
 </div>
 
 
 <!-- Inicio Modal Sesion -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <div class="centreado">
-          <button type="button" (click)="onLoginGoogle()" data-dismiss="modal" class="btn btn-primary boton">
+            </div>
+            <div class="modal-body">
+                <div class="centreado">
+                    <button type="button" (click)="onLoginGoogle()" data-dismiss="modal" class="btn btn-primary boton">
             <img class="imagen" src="../../../assets/images/google.jpg">
             Iniciar sesion con google
           </button>
+                </div>
+                <form #formLogin="ngForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="email" [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="pass" [(ngModel)]="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                    </div>
+                    <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Cerrar</button>
+                    <button type="button" data-dismiss="modal" (click)="onLogin()" class="btn btn-danger">Iniciar Sesion</button>
+                </form>
+            </div>
         </div>
-        <form #formLogin="ngForm" (ngSubmit)="onLogin()">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input name="email" [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Enter email"required>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input name="pass" [(ngModel)]="pass" type="password" class="form-control" id="exampleInputPassword1"
-              placeholder="Password" required>
-          </div>
-          <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Cerrar</button>
-          <button type="button" data-dismiss="modal" (click)="onLogin()" class="btn btn-danger">Iniciar Sesion</button>
-        </form>
-      </div>
     </div>
-  </div>
 </div>
 <!-- Fin Modal -->

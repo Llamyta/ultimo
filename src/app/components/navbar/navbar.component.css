@@ -7,6 +7,12 @@
     margin-right: 5%;
 }
 
+.imgRedonda {
+    width: 50px;
+    height: auto;
+    border-radius: 150px;
+}
+
 .centreado {
     text-align: center;
 }
