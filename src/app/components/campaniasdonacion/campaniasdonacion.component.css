@@ -64,10 +64,6 @@ body {
     max-width: 820px;
 }
 
-.card--1 .card__img--hover {
-    background-image: url(../../../assets/images/google.jpg);
-}
-
 .card__time {
     font-size: 12px;
     color: #313131;
