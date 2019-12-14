@@ -5,4 +5,5 @@ export interface CitasInterface{
     fecha?: Date;
     hora?: string;
     id?: string;
+    estado:boolean;
 }

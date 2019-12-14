@@ -75,6 +75,8 @@ export class CampaniasdonacionComponent implements OnInit {
   guardar(form: NgForm){
     form.value.id_usuario = this.ciUsuario;
     form.value.id_solicitud = this.ciSolicitud;
+    form.value.id_solicitud = this.ciSolicitud;
+    form.value.estado = false;
     this.citas.agregarCitasRegistro(form.value);    
     form.resetForm();            
     Swal.fire({

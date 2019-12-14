@@ -1,5 +1,4 @@
 
-
 export interface SolicitudOrganosInterface{
     ci?: string;
     nombre?: string;
