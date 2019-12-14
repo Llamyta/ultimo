@@ -47,5 +47,5 @@ export class DataApiService {
    borrarPersonaRegistro(idPersonaRegistro: string): void {
      this.resgistroPersonaDOC = this.firebase.doc<PersonaRegistradaInterface>(`Usuario/${idPersonaRegistro}`);
      this.resgistroPersonaDOC.delete();
-   }
+   }   
 }
