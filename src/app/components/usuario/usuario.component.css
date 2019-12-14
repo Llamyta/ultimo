@@ -8,15 +8,23 @@
     justify-content: center !important;
     min-height: 40vh !important;
 }
-.centrear{
+
+.centrear {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+h2 {
+    font-family: learning curve;
+    size: 50px;
+    color: white;
+    font-weight: bold;
+}
+
 h1 {
     font-family: learning curve;
-    size: 60px;
+    size: 50px;
     color: white;
     font-weight: bold;
 }
@@ -37,4 +45,8 @@ p {
 
 img {
     margin: 2% 0 2% 0 !important;
+}
+
+p {
+    font-weight: bold;
 }

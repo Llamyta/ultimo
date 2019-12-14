@@ -97,7 +97,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onLoginRedirect(): void{
-    this.router.navigate(['inicio']);
+    this.router.navigate(['usuarios']);
 
   }
 
