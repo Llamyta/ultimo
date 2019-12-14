@@ -11,6 +11,8 @@ import { SolicitardonadoresComponent } from './components/solicitardonadores/sol
 import { DonacionorganosComponent } from './components/donacionorganos/donacionorganos.component';
 import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
 import { RegistroorganosComponent } from './components/registroorganos/registroorganos.component';
+import { DonacionesComponent } from './components/donaciones/donaciones.component';
+
 
 
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
    { path: 'solicitadonadores', component: SolicitardonadoresComponent},
    { path: 'organos', component: DonacionorganosComponent},
    { path: 'usuarios', component: UsuarioComponent},
+   { path: 'donaciones', component: DonacionesComponent},
    { path: 'campaniaDonacion', component: CampaniasdonacionComponent},
    { path: 'regorganos', component: RegistroorganosComponent},
    { path: 'hospitales', component: HospitalesComponent},

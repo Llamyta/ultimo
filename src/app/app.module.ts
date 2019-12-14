@@ -27,6 +27,7 @@ import { RegistroGoogleComponent } from './components/registro-google/registro-g
 import { HospitalesComponent } from './components/hospitales/hospitales.component';
 import { RegistroorganosComponent } from './components/registroorganos/registroorganos.component';
 import { FiltraSangrePipe } from './pipes/filtra-sangre.pipe';
+import { DonacionesComponent } from './components/donaciones/donaciones.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { FiltraSangrePipe } from './pipes/filtra-sangre.pipe';
     RegistroGoogleComponent,
     HospitalesComponent,
     RegistroorganosComponent,
-    FiltraSangrePipe
+    FiltraSangrePipe,
+    DonacionesComponent
   ],
   imports: [
     BrowserModule,

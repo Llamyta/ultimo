@@ -1,0 +1,52 @@
+#seccion {
+    padding: 10% 15% 10% 15% !important;
+}
+
+.col {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 40vh !important;
+}
+
+.centrear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-family: learning curve;
+    size: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: learning curve;
+    size: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+p {
+    font-weight: lighter;
+}
+
+.encabezado {
+    color: #2E2E2E;
+    text-align: center;
+}
+
+.tarjeta {
+    border: none;
+    background-color: transparent;
+}
+
+img {
+    margin: 2% 0 2% 0 !important;
+}
+
+p {
+    font-weight: bold;
+}
