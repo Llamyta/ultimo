@@ -18,10 +18,17 @@
         <h1 class="encabezado">Estas personas necesitan tu ayuda</h1>
     </div>
     <div class="container" style="padding:5% 0 5% 0;">
-        <div class="card" style="width: 18rem;">
-            <img src="../../../assets/images/person1.jpg" class="card-img-top" alt="..." style="padding: 0 2% 2% 2%;">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4" *ngFor="let item of donadores">
+                <div class="card">
+                    <div style="text-align: center;">
+                        <img src="{{ item.foto }} " class="card-img-top" alt="..." />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre completo: {{ item.nombre }} {{ item.apellido_m }}</h5>
+                        <h5 class="card-title">Necesita: {{ item.organo }}</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
