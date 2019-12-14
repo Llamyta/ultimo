@@ -30,17 +30,17 @@
             Donar Sangre
           </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" [routerLink]="['requisitos']">Requisitos</a>
-                        <a class="dropdown-item" [routerLink]="['registrarse']">Registrarse</a>
+                        <a class="dropdown-item" [routerLink]="['requisitos']" *ngIf="!isLogin">Requisitos</a>
+                        <a class="dropdown-item" [routerLink]="['registrarse']" *ngIf="!isLogin">Registrarse</a>
                         <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
-                        <a class="dropdown-item" [routerLink]="['campaniaDonacion']">Campañas de Donacion</a>
+                        <a class="dropdown-item" [routerLink]="['campaniaDonacion']" >Campañas de Donacion</a>
                     </div>
                 </li>
                 <li routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav" [routerLink]="['solicitadonadores']">Solicitar Donadores</a>
                 </li>
                 <li routerLinkActive="activee" *ngIf="!isAdmin">
-                    <a class="boton-nav" [routerLink]="['organos']">Donacion Organos</a>
+                    <a class="boton-nav" [routerLink]="['organos']" *ngIf="!isLogin">Donacion Organos</a>
                 </li>
                 <li style="cursor: pointer;" routerLinkActive="activee" *ngIf="!isLogin && !isAdmin">
                     <a class="boton-nav" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
