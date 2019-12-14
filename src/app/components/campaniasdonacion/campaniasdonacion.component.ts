@@ -18,6 +18,7 @@ export class CampaniasdonacionComponent implements OnInit {
 
   estaLogeado:boolean = false;
   personaSolicitud: any[]=[];
+  sinLogeoPersonas: any[]=[];
 
   personaLogeada: any[]=[];
   ciUsuario: any;
@@ -52,6 +53,7 @@ export class CampaniasdonacionComponent implements OnInit {
 
     this.solicitudSangre.obtenersolicitudSangre().subscribe(resp => {
       this.personaSolicitud = resp;
+      this.sinLogeoPersonas = resp;
     })
 
     // $(document).ready(function() {

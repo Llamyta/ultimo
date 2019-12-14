@@ -1,47 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light espaciado App-header" id="menu1" style="position: sticky;top: 0;">
-  <a class="navbar-brand" href="#">
-    <img src="../../../assets/images/dona sangre.png" width="150px" height="auto" alt="">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['inicio']">Inicio <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown" routerLinkActive="active">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Donar Sangre
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" [routerLink]="['requisitos']">Requisitos</a>
-          <a class="dropdown-item" [routerLink]="['registrarse']">Registrarse</a>
-          <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
-          <a class="dropdown-item" href="#">Campañas de Donacion</a>
-        </div>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['solicitadonadores']">Solicitar Donadores</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['organos']">Donacion Organos</a>
-      </li>
-
-      <li class="nav-item" style="cursor: pointer;" routerLinkActive="active" *ngIf="!isLogin">
-        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
-      </li>
-
-      <li class="nav-item" *ngIf="isLogin">
-        <a (click)="onLogout()" class="nav-link" style="cursor: pointer;">Cerrar Sesion</a>
-      </li>
-    </ul>
-  </div>
-</nav> -->
 
 <div class="menu-fixed">
     <header class="header espaciado" id="menu1">
@@ -51,9 +8,24 @@
         <nav>
             <ul>
                 <li routerLinkActive="activee">
-                    <a class="boton-nav" [routerLink]="['inicio']">Inicio </a>
+                    <a class="boton-nav" [routerLink]="['hospitales']" *ngIf="isAdmin">Inicio </a>
                 </li>
                 <li class="nav-item dropdown" routerLinkActive="activee">
+                  <a class="boton-nav dropdown-toggle" href="#" *ngIf="isAdmin" id="navbarDropdownMenuLinkadmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Registrar
+        </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkadmin">
+                      <a class="dropdown-item" [routerLink]="['hospitales']">Registrar Hospitales</a>
+                      <a class="dropdown-item" [routerLink]="['regorganos']">Solicitud de Organos</a>
+                  </div>
+              </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['inicio']" *ngIf="!isLogin" >Inicio </a>
+                </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['usuarios']" *ngIf="isLogin && !isAdmin" >Perfil</a>
+                </li>
+                <li class="nav-item dropdown" routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Donar Sangre
           </a>
@@ -64,13 +36,13 @@
                         <a class="dropdown-item" [routerLink]="['campaniaDonacion']">Campañas de Donacion</a>
                     </div>
                 </li>
-                <li routerLinkActive="activee">
+                <li routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav" [routerLink]="['solicitadonadores']">Solicitar Donadores</a>
                 </li>
-                <li routerLinkActive="activee">
+                <li routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav" [routerLink]="['organos']">Donacion Organos</a>
                 </li>
-                <li style="cursor: pointer;" routerLinkActive="activee" *ngIf="!isLogin">
+                <li style="cursor: pointer;" routerLinkActive="activee" *ngIf="!isLogin && !isAdmin">
                     <a class="boton-nav" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
                 </li>
                 <li *ngIf="isLogin" class="nav-item dropdown" routerLinkActive="activee">
