@@ -3,17 +3,19 @@
         <div class="card" style="width: auto;">
             <div class="container">
 
-                <div class="row">
+                <div class="row" >
                     <div class="col-6">
-                        <img src="../../../assets/images/person1.jpg" class="card-img-top" alt="...">
+                        <img src="../../../assets/images/person1.jpg" *ngIf="!fotoPersona" class="card-img-top" alt="...">
+                        <img src="{{fotoPersona}}" *ngIf="fotoPersona" class="card-img-top" alt="...">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" *ngFor="let item of personaCompleta" >
                         <div class="card-body">
-                            <h2 class="card-title encabezado">Bienvenida Bernarda</h2>
+                            <h2 class="card-title encabezado">Bienvenido</h2>
                             <hr>
-                            <p>Nombre Completo: </p>
-                            <p>Registrado como: </p>
-                            <p>Tipo de Sangre: </p>
+                            <p>Nombre Completo: {{item.nombre}} {{item.apellido_p}} {{item.apellido_m}} </p>
+                            <p *ngIf="item.sangre == true">Registrado como: Donador de Sangre </p>
+                            <p *ngIf="item.organos == true">Registrado como: Donador de Organos </p>
+                            <p>Tipo de Sangre: {{item.tipo_sangre}}  </p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +45,7 @@
                     <td>{{item.hora}}</td>
                     <td>{{item.fecha}}</td>
                     <td>{{item.hospital}}</td>
-                    <td>{{item.estado}}</td>
+                    <td *ngIf="item.estado == false">En espera</td>
                 </tr>
             </tbody>
         </table>
