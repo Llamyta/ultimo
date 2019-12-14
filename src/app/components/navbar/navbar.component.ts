@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 declare var jQuery: any;
 declare var $: any;
 import Swal from "sweetalert2";
-import { DataApiService } from '../../services/data-api.service';
+import { DataApiService } from "../../services/data-api.service";
 
 @Component({
   selector: "app-navbar",
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   public fotoUsuario: string;
   public isAdmin: boolean = false;
 
-  personas: any[]=[];
+  personas: any[] = [];
   constructor(
     private authService: AuthService,
     private afsAuth: AngularFireAuth,
@@ -35,14 +35,13 @@ export class NavbarComponent implements OnInit {
     this.authService.isAuth().subscribe(user => {
       if (user) {
         this.fotoUsuario = user.photoURL;
-        
-        this.persona.obtenerPersonaRegistro().subscribe(resp =>{
+
+        this.persona.obtenerPersonaRegistro().subscribe(resp => {
           this.personas = resp;
           this.personas.forEach(element => {
             if (user.email == "adminpatito@hotmail.com") {
               this.isAdmin = true;
-              console.log(user.email,element.email);
-              
+              this.router.navigate(["hospitales"]);
             }
           });
         });
@@ -67,21 +66,21 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  verificaAdmin(){
+  verificaAdmin() {
     this.authService.isAuth().subscribe(user => {
       if (user) {
         this.fotoUsuario = user.photoURL;
 
-        this.persona.obtenerPersonaRegistro().subscribe(resp =>{
+        this.persona.obtenerPersonaRegistro().subscribe(resp => {
           this.personas = resp;
           this.personas.forEach(element => {
             if (user.email == element.email) {
-              this.isAdmin = true;              
+              this.isAdmin = true;
             }
           });
         });
       }
-    });    
+    });
   }
 
   siUsuarioAutentificado() {
@@ -100,11 +99,9 @@ export class NavbarComponent implements OnInit {
   onLogin(): void {
     this.authService
       .loginEmailUser(this.email, this.pass)
-      .then(res => {                
-        
+      .then(res => {
         if (this.isAdmin == true) {
-          this.router.navigate(["hospitales"]);                              
-        }else{          
+        } else {
           this.onLoginRedirect();
         }
 
