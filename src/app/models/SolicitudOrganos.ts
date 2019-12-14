@@ -7,7 +7,7 @@ export interface SolicitudOrganosInterface{
     apellido_m?: string;
     fecha_nac?: Date;
     genero?: string;
-    tipo_sangre?: string;
+    organo?: string;
     cantidad_donadores?: string;
     telefono?: string;
     foto?: string;
