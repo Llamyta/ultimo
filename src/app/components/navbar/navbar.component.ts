@@ -35,12 +35,14 @@ export class NavbarComponent implements OnInit {
     this.authService.isAuth().subscribe(user => {
       if (user) {
         this.fotoUsuario = user.photoURL;
-
+        
         this.persona.obtenerPersonaRegistro().subscribe(resp =>{
           this.personas = resp;
           this.personas.forEach(element => {
-            if (user.email == element.email) {
+            if (user.email == "adminpatito@hotmail.com") {
               this.isAdmin = true;
+              console.log(user.email,element.email);
+              
             }
           });
         });
@@ -65,6 +67,23 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  verificaAdmin(){
+    this.authService.isAuth().subscribe(user => {
+      if (user) {
+        this.fotoUsuario = user.photoURL;
+
+        this.persona.obtenerPersonaRegistro().subscribe(resp =>{
+          this.personas = resp;
+          this.personas.forEach(element => {
+            if (user.email == element.email) {
+              this.isAdmin = true;              
+            }
+          });
+        });
+      }
+    });    
+  }
+
   siUsuarioAutentificado() {
     this.authService.isAuth().subscribe(auth => {
       if (auth) {
@@ -81,14 +100,14 @@ export class NavbarComponent implements OnInit {
   onLogin(): void {
     this.authService
       .loginEmailUser(this.email, this.pass)
-      .then(res => {
-        if (this.isAdmin) {
-          this.router.navigate(["hospitales"]);    
-          console.log(this.isAdmin);
-                
+      .then(res => {                
+        
+        if (this.isAdmin == true) {
+          this.router.navigate(["hospitales"]);                              
         }else{          
           this.onLoginRedirect();
         }
+
         if (this.email == "" && this.pass == "") {
           Swal.fire({
             icon: "error",
