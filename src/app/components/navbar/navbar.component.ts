@@ -139,6 +139,7 @@ export class NavbarComponent implements OnInit {
 
   onLogout() {
     this.authService.logoutUser();
+    this.router.navigate(["inicio"]);
   }
 
   onLoginRedirect(): void {

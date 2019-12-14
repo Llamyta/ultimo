@@ -1,5 +1,3 @@
-
-
 <div class="menu-fixed">
     <header class="header espaciado" id="menu1">
         <a [routerLink]="['inicio']">
@@ -11,19 +9,22 @@
                     <a class="boton-nav" [routerLink]="['adsf']" *ngIf="isAdmin">Inicio </a>
                 </li>
                 <li class="nav-item dropdown" routerLinkActive="activee">
-                  <a class="boton-nav dropdown-toggle" href="#" *ngIf="isAdmin" id="navbarDropdownMenuLinkadmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="boton-nav dropdown-toggle" href="#" *ngIf="isAdmin" id="navbarDropdownMenuLinkadmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Registrar
         </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkadmin">
-                      <a class="dropdown-item" [routerLink]="['hospitales']">Registrar Hospitales</a>
-                      <a class="dropdown-item" [routerLink]="['regorganos']">Solicitud de Organos</a>
-                  </div>
-              </li>
-                <li routerLinkActive="activee">
-                    <a class="boton-nav" [routerLink]="['inicio']" *ngIf="!isLogin" >Inicio </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkadmin">
+                        <a class="dropdown-item" [routerLink]="['hospitales']">Registrar Hospitales</a>
+                        <a class="dropdown-item" [routerLink]="['regorganos']">Solicitud de Organos</a>
+                    </div>
                 </li>
                 <li routerLinkActive="activee">
-                    <a class="boton-nav" [routerLink]="['usuarios']" *ngIf="isLogin && !isAdmin" >Perfil</a>
+                    <a class="boton-nav" [routerLink]="['inicio']" *ngIf="!isLogin">Inicio </a>
+                </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['usuarios']" *ngIf="isLogin && !isAdmin">Perfil</a>
+                </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['donaciones']" *ngIf="isLogin && !isAdmin">Donaciones</a>
                 </li>
                 <li class="nav-item dropdown" routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,7 +34,7 @@
                         <a class="dropdown-item" [routerLink]="['requisitos']" *ngIf="!isLogin">Requisitos</a>
                         <a class="dropdown-item" [routerLink]="['registrarse']" *ngIf="!isLogin">Registrarse</a>
                         <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
-                        <a class="dropdown-item" [routerLink]="['campaniaDonacion']" >Campañas de Donacion</a>
+                        <a class="dropdown-item" [routerLink]="['campaniaDonacion']">Campañas de Donacion</a>
                     </div>
                 </li>
                 <li routerLinkActive="activee" *ngIf="!isAdmin">
