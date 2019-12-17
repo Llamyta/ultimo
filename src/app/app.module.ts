@@ -28,6 +28,7 @@ import { HospitalesComponent } from './components/hospitales/hospitales.componen
 import { RegistroorganosComponent } from './components/registroorganos/registroorganos.component';
 import { FiltraSangrePipe } from './pipes/filtra-sangre.pipe';
 import { DonacionesComponent } from './components/donaciones/donaciones.component';
+import { AprobarcitasComponent } from './componets/aprobarcitas/aprobarcitas.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { DonacionesComponent } from './components/donaciones/donaciones.componen
     HospitalesComponent,
     RegistroorganosComponent,
     FiltraSangrePipe,
-    DonacionesComponent
+    DonacionesComponent,
+    AprobarcitasComponent
   ],
   imports: [
     BrowserModule,
