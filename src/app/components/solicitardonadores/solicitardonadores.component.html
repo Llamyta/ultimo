@@ -1,108 +1,218 @@
 <section id="seccion">
-    <div class="centreado">
-        <h1 class="encabezado">Pasos para solicitar Donadores</h1>
+  <div class="centreado">
+    <h1 class="encabezado">Pasos para solicitar Donadores</h1>
+  </div>
+  <div class="centreado container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="../../../assets/images/llena.png" />
+        <p>Llena el Formulario</p>
+      </div>
+      <div class="col-md-4">
+        <img src="../../../assets/images/tasks-solid.png" />
+        <p>Registra tu solicitud</p>
+      </div>
+      <div class="col-md-4">
+        <img src="../../../assets/images/compartir.png" />
+        <p>Comparte en tus redes sociales</p>
+      </div>
     </div>
-    <div class="centreado container">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="../../../assets/images/llena.png">
-                <p>Llena el Formulario</p>
-
-            </div>
-            <div class="col-md-4">
-                <img src="../../../assets/images/tasks-solid.png">
-                <p>Registra tu solicitud</p>
-            </div>
-            <div class="col-md-4">
-                <img src="../../../assets/images/compartir.png">
-                <p>Comparte en tus redes sociales</p>
-            </div>
-        </div>
-
-    </div>
+  </div>
 </section>
 <section id="seccion">
-    <div class="centreado">
-        <h1 class="encabezado">Formulario de Solicitud de Donadores</h1>
-    </div>
-    <div>
-        <form #formSolicitud="ngForm" (ngSubmit)="guardarSolicitud(formSolicitud)" class="needs-validation">            
-            <div class="form-row">
-                <div class="form-group col-md-6 has-danger">
-                    <label for="ci">Carnet de Identidad</label>
-                    <input name="ci" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.ci" type="number" class="form-control" id="ci" required placeholder="C.I." >
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="nombre">Nombre(s)</label>
-                    <input name="nombre" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.nombre" type="text" class="form-control" id="nombre" required placeholder="Nombre">
-                </div>
+  <div class="centreado">
+    <h1 class="encabezado">Formulario de Solicitud de Donadores</h1>
+  </div>
+  <div>
+    <form
+      #formSolicitud="ngForm"
+      (ngSubmit)="guardarSolicitud(formSolicitud)"
+      class="needs-validation"
+    >
+      <div class="form-row">
+        <div class="form-group col-md-6 has-danger">
+          <label for="ci">Carnet de Identidad</label>
+          <input
+            name="ci"
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.ci"
+            type="number"
+            class="form-control"
+            id="ci"
+            required
+            placeholder="C.I."
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nombre">Nombre(s)</label>
+          <input
+            name="nombre"
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.nombre"
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            placeholder="Nombre"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="ap">Apellido Paterno</label>
+          <input
+            name="apellido_p"
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.apellido_p"
+            type="text"
+            class="form-control"
+            id="ap"
+            required
+            placeholder="Apellido"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="am">Apellido Materno</label>
+          <input
+            name="apellido_m"
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.apellido_m"
+            type="text"
+            class="form-control"
+            id="am"
+            required
+            placeholder="Apellido"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fnac">Fecha de Nacimiento</label>
+        <input
+          name="facha_nac"
+          [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.fecha_nac"
+          type="date"
+          class="form-control"
+          id="fnac"
+          required
+          placeholder="1234 Main St"
+        />
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="genero">Genero</label>
+          <select
+            id="genero"
+            required
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.genero"
+            name="genero"
+            class="form-control"
+          >
+            <option selected>Choose...</option>
+            <option>Masculino</option>
+            <option>Femenino</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tiposangre">Tipo de Sangre</label>
+          <select
+            id="tiposangre"
+            required
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.tipo_sangre"
+            name="tipo_sangre"
+            class="form-control"
+          >
+            <option selected>Choose...</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>O</option>
+            <option>A</option>
+            <option>B</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="cant">Cantidad de Dondores</label>
+          <input
+            name="cantidad_donadores"
+            [(ngModel)]="
+              this.dataApi.seleccionarSolicitudSangre.cantidad_donadores
+            "
+            type="number"
+            class="form-control"
+            id="cant"
+            required
+            placeholder="Cantidad de Donadores"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="contacto">Telefono</label>
+          <input
+            name="telefono"
+            [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.telefono"
+            type="number"
+            class="form-control"
+            id="contacto"
+            required
+            placeholder="Telefono de Contacto"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlFile1">Seleccionar imagen</label>
+            <input
+              (change)="onUpload($event)"
+              required
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+            <input
+              type="hidden"
+              name="foto"
+              #imagenFoto
+              [value]="urlFoto | async"
+              [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.foto"
+            />
+  
+            <!-- <input type="file" id="Logo" (change)="onUpload($event, cualEs = 'logo')"> -->
+            <div class="progress mt-3">
+              <div
+                class="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                [style.width]="(uploadPercentFoto | async) + '%'"
+              ></div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="ap">Apellido Paterno</label>
-                    <input name="apellido_p" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.apellido_p" type="text" class="form-control" id="ap" required placeholder="Apellido">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="am">Apellido Materno</label>
-                    <input name="apellido_m" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.apellido_m" type="text" class="form-control" id="am" required placeholder="Apellido">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="fnac">Fecha de Nacimiento</label>
-                <input name="facha_nac" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.fecha_nac" type="date" class="form-control" id="fnac" required placeholder="1234 Main St">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="genero">Genero</label>
-                    <select id="genero" required [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.genero" name="genero" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>Masculino</option>
-                  <option>Femenino</option>
+          </div>
+          <div class="form-group col-md-6">
+            <div >
+                <label for="hospital">Hospital</label>
+                <select
+                  id="hospital"
+                  required
+                  [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.hospital"
+                  name="hospital"
+                  class="form-control"
+                >              
+                  <option *ngFor="let item of hospitalesVar">{{item.hospital}}</option>              
                 </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="tiposangre">Tipo de Sangre</label>
-                    <select id="tiposangre" required [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.tipo_sangre" name="tipo_sangre" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>O+</option>
-                  <option>O-</option>
-                  <option>O</option>
-                  <option>A</option>
-                  <option>B</option>
-                </select>
-                </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="cant">Cantidad de Dondores</label>
-                    <input name="cantidad_donadores" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.cantidad_donadores" type="number" class="form-control" id="cant" required placeholder="Cantidad de Donadores">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="contacto">Telefono</label>
-                    <input name="telefono" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.telefono" type="number" class="form-control" id="contacto" required placeholder="Telefono de Contacto">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Seleccionar imagen</label>
-                <input (change)="onUpload($event)" required type="file" class="form-control-file" id="exampleFormControlFile1">
-                <input type="hidden" name="foto"  #imagenFoto [value]="urlFoto | async" [(ngModel)]="this.dataApi.seleccionarSolicitudSangre.foto">
-
-
-                <!-- <input type="file" id="Logo" (change)="onUpload($event, cualEs = 'logo')"> -->
-                <div class="progress mt-3">
-                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercentFoto | async) + '%'">
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="centreado" style="padding-top: 10%;">
-                <button type="submit" class="btn btn-danger" *ngIf="formSolicitud.valid == true && urlFoto | async; else btnDisabled">Registrarse</button>
-                <ng-template #btnDisabled>
-                        <button type="submit" class="btn btn-danger"  disabled=true>Registrarse</button>
-                </ng-template>
-                
-            </div>
-        </form>
-    </div>
+          </div>
+      </div>      
+      <div class="centreado" style="padding-top: 10%;">
+        <button
+          type="submit"
+          class="btn btn-danger"
+          *ngIf="
+            formSolicitud.valid == true && urlFoto | async;
+            else btnDisabled
+          "
+        >
+          Registrarse
+        </button>
+        <ng-template #btnDisabled>
+          <button type="submit" class="btn btn-danger" disabled="true">
+            Registrarse
+          </button>
+        </ng-template>
+      </div>
+    </form>
+  </div>
 </section>

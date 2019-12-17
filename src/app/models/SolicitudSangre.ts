@@ -12,4 +12,5 @@ export interface SolicitudSangreInterface{
     telefono?: string;
     foto?: string;
     id?: string;
+    hospital?: string;
 }

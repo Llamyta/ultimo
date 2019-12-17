@@ -5,6 +5,7 @@ import { AngularFireStorage } from "@angular/fire/storage";
 import { Observable } from "rxjs/internal/Observable";
 import { finalize } from "rxjs/operators";
 import Swal from 'sweetalert2'
+import { HospitalesService } from '../../services/hospitales.service';
 
 
 @Component({
@@ -18,10 +19,14 @@ export class SolicitardonadoresComponent implements OnInit {
 
   urlFoto: any;
   uploadPercentFoto: Observable<number>;
+  hospitalesVar: any[]=[];
 
-  constructor(public dataApi:SolicitudSangreService, private storage:AngularFireStorage ) { }
+  constructor(public dataApi:SolicitudSangreService, private storage:AngularFireStorage,private hospitales: HospitalesService ) { }
 
   ngOnInit() {
+    this.hospitales.obtenerHospitalRegistro().subscribe(resp => {
+      this.hospitalesVar = resp;
+    });
   }
 
   onUpload(e, cualEs: string) {

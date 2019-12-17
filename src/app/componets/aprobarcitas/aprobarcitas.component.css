@@ -2,12 +2,12 @@
     padding: 10% 15% 10% 15% !important;
 }
 
-.col {
+/* .col {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     min-height: 40vh !important;
-}
+} */
 
 .centrear {
     display: flex;
