@@ -63,14 +63,6 @@ h2 {
     background-color: #F2F2F2;
     perspective: 1000px;
 }
-
-.centrecard {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
 .flip-card-inner {
     position: relative;
     width: 100%;
