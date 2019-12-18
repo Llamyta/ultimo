@@ -18,7 +18,7 @@
                     </div>
                 </li>
                 <li routerLinkActive="activee">
-                    <a class="boton-nav" [routerLink]="['inicio']" *ngIf="!isLogin">Inicio </a>
+                    <a class="boton-nav" routerLink="inicio" *ngIf="!isLogin">Inicio </a>
                 </li>
                 <li routerLinkActive="activee">
                     <a class="boton-nav" [routerLink]="['usuarios']" *ngIf="isLogin && !isAdmin">Perfil</a>
