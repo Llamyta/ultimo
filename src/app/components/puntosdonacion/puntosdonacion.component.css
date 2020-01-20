@@ -12,24 +12,8 @@
 
 /* FIN FORMULARIOS VALIDACION */
 
-h1 {
-    font-family: learning curve;
-    size: 60px;
-    color: white;
-    font-weight: bold;
-}
 .encabezado {
     color: #2E2E2E;
     text-align: center;
     padding: 10% 0 5% 0;
-}
-
-
-@media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
 }

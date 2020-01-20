@@ -27,20 +27,6 @@
     width: 100%;
 }
 
-h1 {
-    font-family: learning curve;
-    size: 60px;
-    color: white;
-    font-weight: bold;
-}
-
-h2 {
-    font-family: learning curve;
-    size: 50px;
-    color: white;
-    font-weight: bold;
-}
-
 .centrear {
     position: absolute;
     top: 50%;
@@ -63,6 +49,7 @@ h2 {
     background-color: #F2F2F2;
     perspective: 1000px;
 }
+
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -102,13 +89,13 @@ h2 {
 }
 
 @media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
     .im {
-        height: 200px;
+        height: 300px !important;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .im {
+        height: 250px !important;
     }
 }

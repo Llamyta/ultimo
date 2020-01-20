@@ -2,24 +2,15 @@
     padding: 10% 15% 5% 15%;
 }
 
+
 /* FORMULARIOS VALIDACION */
 
-.ng-invalid.ng-touched:not(form){
+.ng-invalid.ng-touched:not(form) {
     border: 1px solid red;
 }
 
 
-
-
-
 /* FIN FORMULARIOS VALIDACION */
-
-h1 {
-    font-family: learning curve;
-    size: 60px;
-    color: white;
-    font-weight: bold;
-}
 
 .centreado {
     text-align: center;
@@ -34,13 +25,4 @@ h1 {
 img {
     height: 120px;
     padding-bottom: 3%;
-}
-
-@media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
 }

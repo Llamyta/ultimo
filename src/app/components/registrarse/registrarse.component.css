@@ -2,14 +2,7 @@
     padding: 5% 15% 5% 15%;
 }
 
-h1 {
-    font-family: learning curve;
-    size: 60px;
-    color: white;
-    font-weight: bold;
-}
-
-.ng-invalid.ng-touched:not(form){
+.ng-invalid.ng-touched:not(form) {
     border: 1px solid red;
 }
 
@@ -35,13 +28,4 @@ img {
 .boton {
     width: 272px !important;
     padding: 10px 0 10px 0 !important;
-}
-
-@media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
 }

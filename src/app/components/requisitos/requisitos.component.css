@@ -1,11 +1,10 @@
 #seccion {
-    padding: 100% 15% 5% 15%;    
+    padding: 100% 15% 5% 15%;
 }
 
-.seccionModil{
+.seccionModil {
     padding-top: 10%;
 }
-
 
 .imagenfondo {
     background-image: url('../../../assets/images/logoparafondo10.png');
@@ -13,6 +12,13 @@
     background-position: center center;
     background-repeat: "no-repeat";
     text-align: center;
+}
+
+.centrear {
+    position: absolute;
+    padding-top: 5%;
+    text-align: left;
+    padding-left: 55%;
 }
 
 .imagenfondo2 {
@@ -29,13 +35,6 @@
     align-items: center !important;
     justify-content: center !important;
     min-height: 40vh !important;
-}
-
-h1 {
-    font-family: learning curve;
-    size: 60px;
-    color: white;
-    font-weight: bold;
 }
 
 p {
@@ -61,16 +60,10 @@ p {
 }
 
 @media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
     .im {
         height: 200px;
     }
-    .seccionModil{
+    .seccionModil {
         padding-top: 120px!important;
     }
 }

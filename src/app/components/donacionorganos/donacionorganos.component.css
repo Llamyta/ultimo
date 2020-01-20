@@ -2,13 +2,6 @@
     padding: 10% 15% 5% 15%;
 }
 
-h1 {
-    font-family: learning curve;
-    size: 60px;
-    color: white;
-    font-weight: bold;
-}
-
 .imagenfondo {
     background-image: url('../../../assets/images/fondoseccionorganos2.jpg');
     background-size: cover;
@@ -17,7 +10,6 @@ h1 {
     height: 100vh;
     width: 100%;
 }
-
 
 .centreado {
     text-align: center;
