@@ -25,12 +25,3 @@
     height: 120px;
     padding-bottom: 3%;
 }
-
-@media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
-}

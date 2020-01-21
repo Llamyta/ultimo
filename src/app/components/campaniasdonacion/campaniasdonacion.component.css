@@ -150,12 +150,6 @@ body {
 }
 
 @media screen and (max-width: 988px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
     .imagen {
         height: 200px;
         width: auto;
@@ -172,12 +166,6 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    h1 {
-        font-family: learning curve;
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-    }
     .imagen {
         height: 100%;
         width: 100%;
