@@ -21,7 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
 import { HospitalesComponent } from './components/hospitales/hospitales.component';
@@ -66,6 +66,7 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFontAwesomeModule,
     FullCalendarModule,
     HttpClientModule,
+    AngularFirestoreModule
   ],
 providers: [AngularFireAuth, AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent]
