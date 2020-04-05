@@ -1,7 +1,7 @@
 import { HospitalesComponent } from './components/hospitales/hospitales.component';
 import { CampaniasdonacionComponent } from './components/campaniasdonacion/campaniasdonacion.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { RequisitosComponent } from './components/requisitos/requisitos.component';
@@ -13,11 +13,13 @@ import { RegistroGoogleComponent } from './components/registro-google/registro-g
 import { RegistroorganosComponent } from './components/registroorganos/registroorganos.component';
 import { DonacionesComponent } from './components/donaciones/donaciones.component';
 import { AprobarcitasComponent } from './componets/aprobarcitas/aprobarcitas.component';
+import { ListadeesperaComponent } from './components/listadeespera/listadeespera.component';
 
 
 
 
 const routes: Routes = [
+  { path: 'lista', component: ListadeesperaComponent},
    { path: 'inicio', component: HomeComponent},
    { path: 'google', component: RegistroGoogleComponent},
    { path: 'requisitos', component: RequisitosComponent},
@@ -32,6 +34,7 @@ const routes: Routes = [
    { path: 'regorganos', component: RegistroorganosComponent},
    { path: 'hospitales', component: HospitalesComponent},
    { path: '**', pathMatch: 'full', component: HomeComponent},
+   
 ];
 
 @NgModule({

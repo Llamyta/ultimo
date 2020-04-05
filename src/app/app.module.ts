@@ -22,7 +22,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireStorage } from "@angular/fire/storage";
+import { AngularFireStorage } from '@angular/fire/storage';
 import { RegistroGoogleComponent } from './components/registro-google/registro-google.component';
 import { HospitalesComponent } from './components/hospitales/hospitales.component';
 import { RegistroorganosComponent } from './components/registroorganos/registroorganos.component';
@@ -30,6 +30,10 @@ import { FiltraSangrePipe } from './pipes/filtra-sangre.pipe';
 import { DonacionesComponent } from './components/donaciones/donaciones.component';
 import { AprobarcitasComponent } from './componets/aprobarcitas/aprobarcitas.component';
 
+ // Fullcalendar
+import {FullCalendarModule} from '@fullcalendar/angular';
+import { ListadeesperaComponent } from './components/listadeespera/listadeespera.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,8 @@ import { AprobarcitasComponent } from './componets/aprobarcitas/aprobarcitas.com
     RegistroorganosComponent,
     FiltraSangrePipe,
     DonacionesComponent,
-    AprobarcitasComponent
+    AprobarcitasComponent,
+    ListadeesperaComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +63,11 @@ import { AprobarcitasComponent } from './componets/aprobarcitas/aprobarcitas.com
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FullCalendarModule,
+    HttpClientModule,
   ],
-providers: [AngularFireAuth,AngularFirestore, AngularFireStorage],
+providers: [AngularFireAuth, AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

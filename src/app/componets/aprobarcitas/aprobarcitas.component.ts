@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { CalendarService } from '../../services/calendar.service';
+
 
 @Component({
-  selector: 'app-aprobarcitas',
-  templateUrl: './aprobarcitas.component.html',
-  styleUrls: ['./aprobarcitas.component.css']
+  selector: "app-aprobarcitas",
+  templateUrl: "./aprobarcitas.component.html",
+  styleUrls: ["./aprobarcitas.component.css"]
 })
 export class AprobarcitasComponent implements OnInit {
-
-  constructor() { }
+  
+  calendarEvents: any [] = [];
+  calendarPlugins = [dayGridPlugin];
+  constructor(private svc: CalendarService) {}
 
   ngOnInit() {
+    this.svc.getData().subscribe(data => this.calendarEvents=data);
   }
-
 }
