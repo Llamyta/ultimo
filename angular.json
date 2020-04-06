@@ -25,6 +25,7 @@
                             "src/api"
                         ],
                         "styles": [
+                            "node_modules/@fullcalendar/list/main.css",
                             "./node_modules/bootstrap/dist/css/bootstrap.css",
                             "./node_modules/mdbootstrap/css/mdb.css",
                             "./src/assets/slick/slick.css",

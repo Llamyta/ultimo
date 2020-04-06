@@ -1,8 +1,13 @@
 <section class="seccion">
     <div class="centrear" style="padding:10% 0 10% 0;">
         <div class="container">
-            <full-calendar [events]="calendarEvents" [plugins]="calendarPlugins">
-            </full-calendar>            
+            <full-calendar (dayRender)="dayRender ($event)" [events]="calendarEvents" [header]="{
+                left:'title',
+                center:'dayGridMonth, listDay, listWeek',
+                right:'prev,next'
+            }" [buttonText]="{dayGridMonth:'Mes',listWeek:'Lista Semana',listDay:'Lista Dia'}" [plugins]="calendarPlugins">
+            </full-calendar>
         </div>
     </div>
 </section>
+<!--dayGridWeek, dayGridDay,-->
