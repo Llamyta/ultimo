@@ -76,7 +76,7 @@ export class RegistrarseComponent implements OnInit {
     this.router.navigate(["inicio"]);
   }
 
-  onLoginGoogle() {
+ /* onLoginGoogle() {
     this.authService
       .loginGoogleUser()
       .then(res => {
@@ -89,5 +89,5 @@ export class RegistrarseComponent implements OnInit {
           text: 'No se puede realizar esta accion'        
         })
         );
-  }
+  }*/
 }

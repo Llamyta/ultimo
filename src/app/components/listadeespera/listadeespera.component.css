@@ -1,0 +1,38 @@
+#seccion {
+    padding: 10% 15% 10% 10% !important;
+}
+
+.col {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 40vh !important;
+}
+
+.centrear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-weight: lighter;
+}
+
+.encabezado {
+    color: #2E2E2E;
+    text-align: center;
+}
+
+.tarjeta {
+    border: none;
+    background-color: transparent;
+}
+
+img {
+    margin: 2% 0 2% 0 !important;
+}
+
+p {
+    font-weight: bold;
+}

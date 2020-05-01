@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
           this.personas.forEach(element => {
             if (user.email == "adminpatito@hotmail.com") {
               this.isAdmin = true;
-              this.router.navigate(["hospitales"]);
+              this.router.navigate(["aprobar"]);
             }
           });
         });
@@ -122,7 +122,7 @@ export class NavbarComponent implements OnInit {
       );
   }
 
-  onLoginGoogle() {
+/*  onLoginGoogle() {
     this.authService
       .loginGoogleUser()
       .then(res => {
@@ -135,7 +135,7 @@ export class NavbarComponent implements OnInit {
           text: "Hubo un error en red"
         })
       );
-  }
+  }*/
 
   onLogout() {
     this.authService.logoutUser();

@@ -1,1 +1,30 @@
-<p>listadeespera works!</p>
+
+<section class="seccion">
+    <div class="centrear" style="padding:10% 0 0 0;">
+        <h1 class="encabezado">Lista de Espera</h1>
+    </div>
+    <div class="container" style="padding:5% 0 5% 0;">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre(s)</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Organo</th>
+                    <th scope="col">contacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of donadores">                    
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellido_p}}</td>
+                    <td>{{item.facha_nac}}</td>
+                    <td>{{item.organo}}</td>
+                    <td>{{item.telefono}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</section>

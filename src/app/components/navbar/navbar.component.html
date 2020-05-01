@@ -13,7 +13,7 @@
           Registrar
         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkadmin">
-                        <a class="dropdown-item" [routerLink]="['hospitales']">Registrar Hospitales</a>
+                        <a class="dropdown-item" [routerLink]="['lista']">Lista de Espera</a>
                         <a class="dropdown-item" [routerLink]="['regorganos']">Solicitud de Organos</a>
                     </div>
                 </li>
@@ -70,14 +70,14 @@
                 <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+       </button>
             </div>
             <div class="modal-body">
                 <div class="centreado">
-                    <button type="button" (click)="onLoginGoogle()" data-dismiss="modal" class="btn btn-primary boton">
+                  <!--  <button type="button" (click)="onLoginGoogle()" data-dismiss="modal" class="btn btn-primary boton">
             <img class="imagen" src="../../../assets/images/google.jpg">
             Iniciar sesion con google
-          </button>
+          </button>-->
                 </div>
                 <form #formLogin="ngForm" (ngSubmit)="onLogin()">
                     <div class="form-group">
