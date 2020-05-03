@@ -1,33 +1,6 @@
 #seccion {
-    padding: 100% 15% 5% 15%;
-}
-
-.seccionModil {
-    padding-top: 10%;
-}
-
-.imagenfondo {
-    background-image: url('../../../assets/images/logoparafondo10.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: "no-repeat";
-    text-align: center;
-}
-
-.centrear {
-    position: absolute;
-    padding-top: 5%;
-    text-align: left;
-    padding-left: 55%;
-}
-
-.imagenfondo2 {
-    background-image: url('../../../assets/images/fondoseccionrequisitos.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: "no-repeat";
-    height: 400px;
-    opacity: 80%;
+    padding: 0 15% 0 15%;
+    
 }
 
 .col {
@@ -37,20 +10,24 @@
     min-height: 40vh !important;
 }
 
-p {
-    font-weight: lighter;
+.imagenfondo {
+    background-image: url('../../../assets/images/d5.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: "no-repeat";
+    height: 800px;
+    width: 100%;
+}
+.centrear {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
 .encabezado {
-    color: #2E2E2E;
     text-align: center;
+    padding: 10% 0 5% 0;
 }
-
-.tarjeta {
-    border: none;
-    background-color: transparent;
-}
-
 .imagen {
     height: 150px;
     width: 150px;
@@ -60,9 +37,12 @@ p {
 
 @media screen and (max-width: 988px) {
     .im {
-        height: 200px;
+        height: 300px !important;
     }
-    .seccionModil {
-        padding-top: 120px!important;
+}
+
+@media screen and (max-width: 448px) {
+    .im {
+        height: 250px !important;
     }
 }

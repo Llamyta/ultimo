@@ -1,190 +1,193 @@
-<section id="seccion">
-  <div class="centreado">
-    <h1 class="encabezado">Formulario de Registro</h1>
-   <!-- <button
-      type="button"
-      class="btn btn-primary boton"
-      (click)="onLoginGoogle()"
-    >
-      <img class="imagen" src="../../../assets/images/google.jpg" />
-      Iniciar sesion con google
-    </button>-->
-  </div>
-</section>
-<section id="seccion">
-  <div>
-    <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="ci">Carnet de Identidad</label>
-          <input
-            name="ci"
-            [(ngModel)]="ci"
-            type="number"
-            class="form-control"
-            id="ci"
-            required
-            placeholder="C.I."
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="nombre">Nombre(s)</label>
-          <input
-            name="nombre"
-            [(ngModel)]="nombre"
-            type="text"
-            class="form-control"
-            id="nombre"
-            required
-            placeholder="Nombre"
-          />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="ap">Apellido Paterno</label>
-          <input
-            name="apellido_p"
-            [(ngModel)]="apellido_p"
-            type="text"
-            class="form-control"
-            id="ap"
-            required
-            placeholder="Apellido"
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="am">Apellido Materno</label>
-          <input
-            name="apellido_m"
-            [(ngModel)]="apellido_m"
-            type="text"
-            class="form-control"
-            id="am"
-            required
-            placeholder="Apellido"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="fnac">Fecha de Nacimiento</label>
-        <input
-          name="fecha_nac"
-          [(ngModel)]="fecha_nac"
-          type="date"
-          class="form-control"
-          id="fnac"
-          required
-          placeholder="1234 Main St"
-        />
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="genero">Genero</label>
-          <select
-            id="genero"
-            name="genero"
-            required
-            [(ngModel)]="genero"
-            class="form-control"
-          >
-            <option selected>Choose...</option>
-            <option>Masculino</option>
-            <option>Femenino</option>
-          </select>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="tiposangre">Tipo de Sangre</label>
-          <select
-            id="tiposangre"
-            name="tipo_sangre"
-            required
-            [(ngModel)]="tipo_sangre"
-            class="form-control"
-          >
-            <option selected>Choose...</option>
-            <option>A</option>
-            <option>B</option>
-            <option>O</option>
-            <option>O+</option>
-            <option>O-</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input
-          name="email"
-          [(ngModel)]="email"
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          required
-          placeholder="Enter email"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          name="pass"
-          [(ngModel)]="pass"
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          required
-          placeholder="Password"
-        />
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <div class="form-check">
+<main style=" background-image: url('../../../assets/images/d6.png'); background-size: cover;background-repeat: no-repeat;">
+  <section id="seccion" >
+    <div class="centreado">
+      <h1 class="encabezado">Formulario de Registro</h1>
+     <!-- <button
+        type="button"
+        class="btn btn-primary boton"
+        (click)="onLoginGoogle()"
+      >
+        <img class="imagen" src="../../../assets/images/google.jpg" />
+        Iniciar sesion con google
+      </button>-->
+    </div>
+  </section>
+  <section id="seccion">
+    <div>
+      <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="ci">Carnet de Identidad</label>
             <input
-              class="form-check-input"
-              name="NAME"
-              [checked]="organos"
-              (change)="organos = !organos"
-              type="checkbox"
-              id="organos"
+              name="ci"
+              [(ngModel)]="ci"
+              type="number"
+              class="form-control"
+              id="ci"
+              required
+              placeholder="C.I."
             />
-            <label class="form-check-label" for="organos">
-              Donador de Organos
-            </label>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="nombre">Nombre(s)</label>
+            <input
+              name="nombre"
+              [(ngModel)]="nombre"
+              type="text"
+              class="form-control"
+              id="nombre"
+              required
+              placeholder="Nombre"
+            />
           </div>
         </div>
-        <div class="form-group col-md-6">
-          <div class="form-check">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="ap">Apellido Paterno</label>
             <input
-              class="form-check-input"
-              name="NAME"
-              [checked]="sangre"
-              (change)="sangre = !sangre"
-              type="checkbox"
-              id="sangre"
+              name="apellido_p"
+              [(ngModel)]="apellido_p"
+              type="text"
+              class="form-control"
+              id="ap"
+              required
+              placeholder="Apellido"
             />
-            <label class="form-check-label" for="sangre">
-              Donador de Sangre
-            </label>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="am">Apellido Materno</label>
+            <input
+              name="apellido_m"
+              [(ngModel)]="apellido_m"
+              type="text"
+              class="form-control"
+              id="am"
+              required
+              placeholder="Apellido"
+            />
           </div>
         </div>
-      </div>
-      <div>
-        <button type="button" class="btn btn-link" style="text-transform: none; color: #4CBCB3; padding-left: 0;" [routerLink]="['/hospitales']" routerLinkActive="router-link-active"  >Registrar Punto de Donacion...</button>
-      </div>
-      <div class="centreado" style="padding-top: 10%;">
-        <button
-          type="submit"
-          class="btn btn-danger"
-          *ngIf="formRegister.valid == true; else btnDisabled"
-        >
-          Registrarse
-        </button>
-        <ng-template #btnDisabled>
-          <button type="submit" class="btn btn-danger" disabled="true">
+        <div class="form-group">
+          <label for="fnac">Fecha de Nacimiento</label>
+          <input
+            name="fecha_nac"
+            [(ngModel)]="fecha_nac"
+            type="date"
+            class="form-control"
+            id="fnac"
+            required
+            placeholder="1234 Main St"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="genero">Genero</label>
+            <select
+              id="genero"
+              name="genero"
+              required
+              [(ngModel)]="genero"
+              class="form-control"
+            >
+              <option selected>Choose...</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="tiposangre">Tipo de Sangre</label>
+            <select
+              id="tiposangre"
+              name="tipo_sangre"
+              required
+              [(ngModel)]="tipo_sangre"
+              class="form-control"
+            >
+              <option selected>Choose...</option>
+              <option>A</option>
+              <option>B</option>
+              <option>O</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input
+            name="email"
+            [(ngModel)]="email"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            required
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            name="pass"
+            [(ngModel)]="pass"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                name="NAME"
+                [checked]="organos"
+                (change)="organos = !organos"
+                type="checkbox"
+                id="organos"
+              />
+              <label class="form-check-label" for="organos">
+                Donador de Organos
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                name="NAME"
+                [checked]="sangre"
+                (change)="sangre = !sangre"
+                type="checkbox"
+                id="sangre"
+              />
+              <label class="form-check-label" for="sangre">
+                Donador de Sangre
+              </label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-link" style="text-transform: none; color: #4CBCB3; padding-left: 0;" [routerLink]="['/hospitales']" routerLinkActive="router-link-active"  >Registrar Punto de Donacion...</button>
+        </div>
+        <div class="centreado" style="padding-top: 10%;">
+          <button
+            type="submit"
+            class="btn btn-danger"
+            *ngIf="formRegister.valid == true; else btnDisabled"
+          >
             Registrarse
           </button>
-        </ng-template>
-      </div>
-    </form>
-  </div>
-</section>
+          <ng-template #btnDisabled>
+            <button type="submit" class="btn btn-danger" disabled="true">
+              Registrarse
+            </button>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+</main>

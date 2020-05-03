@@ -8,7 +8,13 @@
                 <li routerLinkActive="activee">
                     <a class="boton-nav" [routerLink]="['aprobar']" *ngIf="isAdmin">Inicio </a>
                 </li>
-                <li class="nav-item dropdown" routerLinkActive="activee">
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['lista']" *ngIf="isAdmin">Lista de Espera </a>
+                </li>
+                <li routerLinkActive="activee">
+                    <a class="boton-nav" [routerLink]="['regorganos']" *ngIf="isAdmin">Solicitud de Organos </a>
+                </li>
+                <!-- <li class="nav-item dropdown" routerLinkActive="activee">
                     <a class="boton-nav dropdown-toggle" href="#" *ngIf="isAdmin" id="navbarDropdownMenuLinkadmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Registrar
         </a>
@@ -16,15 +22,18 @@
                         <a class="dropdown-item" [routerLink]="['lista']">Lista de Espera</a>
                         <a class="dropdown-item" [routerLink]="['regorganos']">Solicitud de Organos</a>
                     </div>
-                </li>
+                </li> -->
                 <li routerLinkActive="activee">
                     <a class="boton-nav" routerLink="inicio" *ngIf="!isLogin">Inicio </a>
                 </li>
                 <li routerLinkActive="activee">
                     <a class="boton-nav" [routerLink]="['usuarios']" *ngIf="isLogin && !isAdmin">Perfil</a>
                 </li>
-                <li routerLinkActive="activee">
+                <!-- <li routerLinkActive="activee">
                     <a class="boton-nav" [routerLink]="['donaciones']" *ngIf="isLogin && !isAdmin">Donaciones</a>
+                </li> -->
+                <li routerLinkActive="activee" *ngIf="!isAdmin">
+                    <a class="boton-nav" [routerLink]="['registrarse']" *ngIf="!isLogin">Registrarse</a>
                 </li>
                 <li class="nav-item dropdown" routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,7 +41,7 @@
           </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" [routerLink]="['requisitos']" *ngIf="!isLogin">Requisitos</a>
-                        <a class="dropdown-item" [routerLink]="['registrarse']" *ngIf="!isLogin">Registrarse</a>
+                        <!-- <a class="dropdown-item" [routerLink]="['registrarse']" *ngIf="!isLogin">Registrarse</a> -->
                         <a class="dropdown-item" [routerLink]="['pntdon']">Puntos de Donacion</a>
                         <a class="dropdown-item" [routerLink]="['campaniaDonacion']">Campañas de Donacion</a>
                     </div>
@@ -40,9 +49,7 @@
                 <li routerLinkActive="activee" *ngIf="!isAdmin">
                     <a class="boton-nav" [routerLink]="['solicitadonadores']">Solicitar Donadores</a>
                 </li>
-                <li routerLinkActive="activee" *ngIf="!isAdmin">
-                    <a class="boton-nav" [routerLink]="['organos']" *ngIf="!isLogin">Donacion Organos</a>
-                </li>
+                
                 <li style="cursor: pointer;" routerLinkActive="activee" *ngIf="!isLogin && !isAdmin">
                     <a class="boton-nav" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</a>
                 </li>
@@ -88,7 +95,7 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input name="pass" [(ngModel)]="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                     </div>
-                    <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal" style="background-color: #63c5d5 !important;">Cerrar</button>
                     <button type="button" data-dismiss="modal" (click)="onLogin()" class="btn btn-danger">Iniciar Sesion</button>
                 </form>
             </div>

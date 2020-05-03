@@ -3,26 +3,26 @@
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 body {
-    background: #F2F2F2;
+    background: #ffffff;
 }
 
 h1 {
-    font-size: 45px;
-    font-family: 'Great Vibes', cursive;
-    color: #F2F2F2;
+    font-size: 30px;
+    font-family: 'Allerta', sans-serif;
+    color: #082948;
     padding-bottom: 2%;
-    font-weight: normal !important;
+    font-weight: bold !important;
 }
 
 h2 {
-    font-size: 35px;
-    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    font-family: 'Allerta', sans-serif;
 }
 
 @media screen and (max-width: 988px) {
     h1 {
         font-size: 2rem;
-        color: #F2F2F2;
+        color: #082948;
         font-weight: bold;
     }
     h2 {

@@ -1,5 +1,5 @@
-<section id="seccion">
-  <div>
+<section id="seccion"style=" background-image: url('../../../assets/images/d5.png'); background-size: cover;background-repeat: no-repeat;">
+  <div  >
     <h1 class="encabezado">Campaña de Donacion</h1>
   </div>
   <div style=" padding: 60px 0 60px 0;">
@@ -13,10 +13,13 @@
         >
           <div
             class="card"
+            style=" background-image: url('../../../assets/images/fondotarjetas(5).png'); background-size: cover;background-repeat: no-repeat;"
+            
             data-toggle="modal"
             data-target="#exampleModal1"
             (click)="enviarIdSolicitud(item.ci)"
             *ngIf="estaLogeado == true"
+            
           >
             <img src="{{ item.foto }} " class="card-img-top imagen" alt="..." />
             <div class="card-body">
@@ -34,6 +37,7 @@
         <div class="col mb-4" *ngFor="let item of sinLogeoPersonas">
           <div
             class="card"
+            style=" background-image: url('../../../assets/images/fondotarjetas(5).png'); background-size: cover;background-repeat: no-repeat;"
             data-toggle="modal"
             data-target="#exampleModal"
             *ngIf="estaLogeado == false"

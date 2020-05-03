@@ -1,5 +1,5 @@
 #seccion {
-    padding: 5% 15% 5% 15%;
+    padding: 5% 15% 3% 15%;
 }
 
 .ng-invalid.ng-touched:not(form) {
@@ -15,9 +15,8 @@ p {
 }
 
 .encabezado {
-    color: #2E2E2E;
     text-align: center;
-    padding: 5% 0 5% 0;
+    padding: 5% 0 0 0;
 }
 
 img {

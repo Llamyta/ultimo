@@ -33,7 +33,7 @@
 }
 
 .color-nav {
-    background: #4CBCB3;
+    background: #ffffff;
     padding-bottom: 0px;
     transition: 0.5s;
 }
@@ -50,7 +50,7 @@
 }
 
 .color-nav {
-    background: #4CBCB3;
+    background: #ffffff;
     padding-bottom: 0px;
     transition: 0.5s;
 }
@@ -104,17 +104,17 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: white;
-    background: #F1414E;
+    background: #FA163F;
 }
 
 header nav ul li a:hover {
     color: white;
-    background: #F1414E;
+    background: #FA163F;
 }
 
 .activee {
     color: white;
-    background: #F1414E;
+    background: #FA163F;
 }
 
 .menu-toggle {
@@ -137,7 +137,7 @@ header nav ul li a:hover {
         position: absolute;
         width: 65%;
         height: calc(100vh - 50px);
-        background: #4CBCB3;
+        background: #ffffff;
         top: 60px;
         left: -100%;
         transition: 0.5s;
