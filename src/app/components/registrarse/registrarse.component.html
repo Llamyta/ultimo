@@ -14,13 +14,13 @@
   </section>
   <section id="seccion">
     <div>
-      <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+      <form #formRegister="ngForm" (ngSubmit)="onAddUser(formRegister)">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="ci">Carnet de Identidad</label>
             <input
               name="ci"
-              [(ngModel)]="ci"
+              [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.ci"
               type="number"
               class="form-control"
               id="ci"
@@ -32,7 +32,7 @@
             <label for="nombre">Nombre(s)</label>
             <input
               name="nombre"
-              [(ngModel)]="nombre"
+              [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.nombre"
               type="text"
               class="form-control"
               id="nombre"
@@ -46,7 +46,7 @@
             <label for="ap">Apellido Paterno</label>
             <input
               name="apellido_p"
-              [(ngModel)]="apellido_p"
+              [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.apellido_p"
               type="text"
               class="form-control"
               id="ap"
@@ -58,7 +58,7 @@
             <label for="am">Apellido Materno</label>
             <input
               name="apellido_m"
-              [(ngModel)]="apellido_m"
+              [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.apellido_m"
               type="text"
               class="form-control"
               id="am"
@@ -71,7 +71,7 @@
           <label for="fnac">Fecha de Nacimiento</label>
           <input
             name="fecha_nac"
-            [(ngModel)]="fecha_nac"
+            [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.fecha_nac"
             type="date"
             class="form-control"
             id="fnac"
@@ -86,7 +86,7 @@
               id="genero"
               name="genero"
               required
-              [(ngModel)]="genero"
+              [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.genero"
               class="form-control"
             >
               <option selected>Choose...</option>
@@ -100,7 +100,7 @@
               id="tiposangre"
               name="tipo_sangre"
               required
-              [(ngModel)]="tipo_sangre"
+              [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.tipo_sangre"
               class="form-control"
             >
               <option selected>Choose...</option>
@@ -116,7 +116,7 @@
           <label for="exampleInputEmail1">Email</label>
           <input
             name="email"
-            [(ngModel)]="email"
+            [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.email"
             type="email"
             class="form-control"
             id="exampleInputEmail1"
@@ -129,13 +129,41 @@
           <label for="exampleInputPassword1">Password</label>
           <input
             name="pass"
-            [(ngModel)]="pass"
+            [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.pass"
             type="password"
             class="form-control"
             id="exampleInputPassword1"
             required
             placeholder="Password"
           />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+              <label for="exampleFormControlFile1">Seleccionar imagen</label>
+              <input
+                (change)="onUpload($event)"
+                required
+                type="file"
+                class="form-control-file"
+                id="exampleFormControlFile1"
+              />
+              <input
+                type="text"
+                name="foto"
+                #imagenFoto
+                [value]="urlFoto | async"
+                [(ngModel)]="this.personaServices.seleccionarPersonaRegistro.foto"
+              />
+    
+              <!-- <input type="file" id="Logo" (change)="onUpload($event, cualEs = 'logo')"> -->
+              <div class="progress mt-3">
+                <div
+                  class="progress-bar progress-bar-striped bg-success"
+                  role="progressbar"
+                  [style.width]="(uploadPercentFoto | async) + '%'"
+                ></div>
+              </div>
+            </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">

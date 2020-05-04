@@ -74,28 +74,32 @@
           />
         </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input
-          name="email"
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          required
-          placeholder="Enter email"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          name="pass"
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          required
-          placeholder="Password"
-        />
+      <div  class="form-row">
+        <div class="form-group col-md-6">
+          <label for="exampleInputEmail1">Email</label>
+          <input
+            name="email"
+            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.email"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            required
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            name="pass"
+            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.pass"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+            placeholder="Password"
+          />
+        </div>
       </div>
       <div class="form-group">
         <label for="exampleFormControlFile1">Imagen del Hospital</label>
@@ -122,7 +126,7 @@
           ></div>
         </div>
       </div>
-      <div class="centreado" style="padding-top: 10%;">
+      <div class="centreado" style="padding-top: 5%;">
         <button
           type="submit"
           class="btn btn-danger"

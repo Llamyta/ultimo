@@ -22,6 +22,7 @@ export class CampaniasdonacionComponent implements OnInit {
 
   personaLogeada: any[]=[];
   ciUsuario: any;
+  nombreUsuario:any;
   tipoSangreUsuario: any;
   ciSolicitud: any;
   emailLogeado: string;
@@ -39,8 +40,9 @@ export class CampaniasdonacionComponent implements OnInit {
           this.personaLogeada.forEach(element => {                        
             if (this.emailLogeado == element.email) {
               this.ciUsuario = element.ci; 
+              this.nombreUsuario=element.nombre+" "+ element.apellido_p;
               this.tipoSangreUsuario = element.tipo_sangre;
-              console.log(this.tipoSangreUsuario);
+              console.log(this.nombreUsuario);
                                        
             }
           });
@@ -77,6 +79,22 @@ export class CampaniasdonacionComponent implements OnInit {
     form.value.id_solicitud = this.ciSolicitud;
     form.value.id_solicitud = this.ciSolicitud;
     form.value.estado = false;
+    form.value.title=this.nombreUsuario;
+    form.value.start = form.value.fecha+'-'+form.value.hora;
+
+    console.log(form.value.start);
+    var cadena = form.value.start.split("-");
+    console.log(cadena);
+    
+    var cadena2 = cadena[3].split(":");
+    
+    cadena2.push('00');
+    cadena2[0]=parseInt(cadena2[0])+4;
+    console.log(cadena2);
+    var datum = new Date(Date.UTC(cadena[0],cadena[1]-1,cadena[2],cadena2[0],cadena2[1],cadena2[2]));
+    console.log(datum);
+
+    form.value.start = datum;
     this.citas.agregarCitasRegistro(form.value);    
     form.resetForm();            
     Swal.fire({

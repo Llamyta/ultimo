@@ -11,4 +11,5 @@ export interface PersonaRegistradaInterface {
   organos?: string;
   sangre?: string;
   id?: string;
+  foto?: string;
 }

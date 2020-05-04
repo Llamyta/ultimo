@@ -1,11 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
+import { finalize } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { AngularFireStorage } from "@angular/fire/storage";
 import { AuthService } from "../../services/auth.service";
 import { PersonaRegistradaInterface } from "../../models/persona_registrada";
 import { DataApiService } from "../../services/data-api.service";
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs/internal/Observable';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-registrarse",
@@ -13,6 +17,11 @@ import Swal from 'sweetalert2';
   styleUrls: ["./registrarse.component.css"]
 })
 export class RegistrarseComponent implements OnInit {
+  @ViewChild("imagenFoto", { static: true }) inputFoto: ElementRef;
+
+  urlFoto: any;
+  uploadPercentFoto: Observable<number>;
+
   ci: string = "";
   nombre: string = "";
   apellido_p: string = "";
@@ -24,35 +33,41 @@ export class RegistrarseComponent implements OnInit {
   public pass: string = "";
   organos: string = "";
   sangre: string = "";
+  foto: string="";
 
   constructor(
     public afAuth: AngularFireAuth,
     private router: Router,
     private authService: AuthService,
-    private personaServices: DataApiService
+    private personaServices: DataApiService,
+    private storage:AngularFireStorage
   ) {}
 
   ngOnInit() {}
+  onUpload(e, cualEs: string) {
+    const id = Math.random()
+        .toString(36)
+        .substring(2);
+      const file = e.target.files[0];
+      const filePath = `avatar/avatar_${id}`;
+      const ref = this.storage.ref(filePath);
+      const taks = this.storage.upload(filePath, file);
+      this.uploadPercentFoto = taks.percentageChanges();
 
-  onAddUser() {
-    let persona: PersonaRegistradaInterface = {
-      ci: this.ci,
-      nombre: this.nombre,
-      apellido_p: this.apellido_p,
-      apellido_m: this.apellido_m,
-      fecha_nac: this.fecha_nac,
-      genero: this.genero,
-      tipo_sangre: this.tipo_sangre,
-      email: this.email,
-      pass: this.pass,
-      organos: this.organos,
-      sangre: this.sangre,
-      id: ""
-    };
+      taks
+        .snapshotChanges()
+        .pipe(finalize(() => (this.urlFoto = ref.getDownloadURL())))
+        .subscribe();
+  }
 
-    this.personaServices.agregarPersonaRegistro(persona);
+  onAddUser(form:NgForm) {
+    
+    form.value.foto = this.inputFoto.nativeElement.value;
+    form.value.sangre = this.sangre;
+    form.value.organos = this.organos;
+    this.personaServices.agregarPersonaRegistro(form.value);
     this.authService
-      .registerUser(this.email, this.pass)
+      .registerUser(form.value.email,form.value.pass)
       .then(res => {
         Swal.fire({
           position: 'top-end',

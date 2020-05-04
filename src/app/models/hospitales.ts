@@ -6,4 +6,6 @@ export interface HospitalesInterface {
     horario_salida?: string;
     foto?: string;
     id?: string;
+    email?:string;
+    pass?:string;
 }
