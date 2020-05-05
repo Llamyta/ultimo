@@ -10,6 +10,9 @@ import { DataApiService } from 'src/app/services/data-api.service';
 import { SolicitudSangreService } from 'src/app/services/solicitud-sangre.service';
 import { HospitalesService } from 'src/app/services/hospitales.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { CitasService } from 'src/app/services/citas.service';
+import { CitasInterface } from 'src/app/models/citas';
+
 
 
 
@@ -32,6 +35,7 @@ export class AprobarcitasComponent implements OnInit {
     private usuarioService: SolicitudSangreService,
     private hospitalService: HospitalesService,
     private auth: AuthService,
+    private citasService:CitasService
   ) { }
 
   dayRender(args) {
@@ -47,46 +51,34 @@ export class AprobarcitasComponent implements OnInit {
     if (title == '') return;
 
   }
+  borrarCitas(id : string){
+    console.log(id);
+    this.citasService.borrarCitasRegistro(id);
+
+  }
+  ModificarCitas(item : CitasInterface){    
+    item.estado = true;    
+    this.citasService.actualizarCitasRegistro(item);
+  }
+
 
   ngOnInit() {
 
 
     this.svc.getData().subscribe(data => {
       this.citas = data;
-      this.usuarioService.obtenersolicitudSangre().subscribe(user => {
-        this.usuario = user;
-        console.log(this.usuario, "este");
-        this.citas.forEach(element => {
-          this.usuario.forEach(element2 => {
-            if (element.id_solicitud === element2.ci) {
-              console.log("ci", element.id_solicitud)
-              console.log("ci", element2.ci)
+      
+      this.citas.forEach(element => {
+        if (element.estado == false) {
+         // this.calendarEvents.push(element);
+         this.calendarEvents = data;
+        }
+      });
+      // this.calendarEvents = data;
 
 
-              this.auth.isAuth().subscribe(user => {
-                this.hospitalService.obtenerHospitalRegistro().subscribe(resp => {
-                  resp.forEach(element3 => {
-                    if (user.email == element3.email) {
-                      console.log(element3.hospital);
-                      console.log(element2.hospital);
-                      
-                      if(element2.hospital===element3.hospital){
-                        this.calendarEvents = data;
-                      }
-
-                    }
-                  });
-               });
-              });
-            }
-          });
-        });
-      })
-
-
-
-    });
-
+   });
+  
 
 
 

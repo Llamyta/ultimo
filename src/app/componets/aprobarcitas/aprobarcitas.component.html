@@ -1,16 +1,44 @@
-
-
-
-<section class="seccion">
-    <div class="centrear" style="padding:10% 0 10% 0;">
-        <div class="container">
-            <full-calendar (dayRender)="dayRender ($event)" [events]="calendarEvents" [header]="{
-                left:'title',
-                center:'dayGridMonth, listDay, listWeek',
-                right:'prev,next'
-            }" [buttonText]="{dayGridMonth:'Mes',listWeek:'Lista Semana',listDay:'Lista Dia'}" [plugins]="calendarPlugins">
-            </full-calendar>
-        </div>
+<div class="container seccion">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+      <div class="col-md-7">
+        <section class="seccion">
+            <div class="centrear" style="padding: 20% 0 10% 0;">
+                <div class="container">
+                    <full-calendar (dayRender)="dayRender ($event)" [events]="calendarEvents" [header]="{
+                        left:'title',
+                        center:'dayGridMonth, listDay, listWeek',
+                        right:'prev,next'
+                    }" [buttonText]="{dayGridMonth:'Mes',listWeek:'Lista Semana',listDay:'Lista Dia'}" [plugins]="calendarPlugins">
+                    </full-calendar>
+                </div>
+            </div>
+        </section>
+      </div>
+      <div class="col-6 col-md-5" style="padding: 20% 0 10% 0;">
+        <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Nombre Completo</th>
+                <th scope="col">Id Solicitud</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of calendarEvents">
+                <td>{{item.title}}</td>
+                <td>{{item.id_solicitud}}</td>
+                <td>
+                    <button type="button" class="btn btn-info btn-sm" (click)="ModificarCitas(item)">Realizada</button>
+                    <button type="button" class="btn btn-danger btn-sm" (click)="borrarCitas(item.id)">Borrar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
     </div>
-</section>
+</div>
+
+
+
 <!--dayGridWeek, dayGridDay,-->

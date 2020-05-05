@@ -25,8 +25,8 @@ export class CitasService {
      .pipe(map(changes => {
        return changes.map(action => {
          const data = action.payload.doc.data() as CitasInterface;
-         data.id = action.payload.doc.id;
-         return data;
+         const id = action.payload.doc.id;
+         return {id, ...data};
        })
      }))
    }
@@ -45,6 +45,7 @@ export class CitasService {
 
    borrarCitasRegistro(idCitasRegistro: string): void {
      this.resgistroCitasDOC = this.firebase.doc<CitasInterface>(`CitasPersonales/${idCitasRegistro}`);
+     console.log(idCitasRegistro, "service");
      this.resgistroCitasDOC.delete();
    }   
 }
