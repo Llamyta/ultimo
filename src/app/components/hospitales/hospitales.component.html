@@ -1,41 +1,51 @@
-<main style=" background-image: url('../../../assets/images/d6.png'); background-size: cover;background-repeat: no-repeat;">
-<section id="seccion">
-  <div class="centreado">
-    <h1 class="encabezado">Formulario de Registro de Hospitales</h1>
-  </div>
-  <div>
-    <form
-      #formSolicitud="ngForm"
-      (ngSubmit)="guardarSolicitud(formSolicitud)"
-      class="needs-validation"
-    >
-      <div class="form-row">
-        <div class="form-group col-md-6 has-danger">
-          <label for="hospital">Nombre del Hospital</label>
-          <input
-            name="hospital"
-            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.hospital"
-            type="text"
-            class="form-control"
-            id="hospital"
-            required
-            placeholder="Nombre del Hospital"
-          />
+<main
+  style="
+    background-image: url('../../../assets/images/d6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  "
+>
+  <section id="seccion">
+    <div class="centreado">
+      <h1 class="encabezado">Formulario de Registro de Hospitales</h1>
+    </div>
+    <div>
+      <form
+        #formSolicitud="ngForm"
+        (ngSubmit)="guardarSolicitud(formSolicitud)"
+        class="needs-validation"
+      >
+        <div class="form-row">
+          <div class="form-group col-md-6 has-danger">
+            <label for="hospital">Nombre del Hospital</label>
+            <input
+              name="hospital"
+              [(ngModel)]="
+                this.hospitalesServices.seleccionarHospitales.hospital
+              "
+              type="text"
+              class="form-control"
+              id="hospital"
+              required
+              placeholder="Nombre del Hospital"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="telefono">Telefono</label>
+            <input
+              name="telefono"
+              [(ngModel)]="
+                this.hospitalesServices.seleccionarHospitales.telefono
+              "
+              type="number"
+              class="form-control"
+              id="telefono"
+              required
+              placeholder="Telefono"
+            />
+          </div>
         </div>
-        <div class="form-group col-md-6">
-          <label for="telefono">Telefono</label>
-          <input
-            name="telefono"
-            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.telefono"
-            type="number"
-            class="form-control"
-            id="telefono"
-            required
-            placeholder="Telefono"
-          />
-        </div>
-      </div>
-      <div class="form-group">
+        <!-- <div class="form-group">
         <label for="ubicacion">Ubicacion</label>
         <input
           name="ubicacion"
@@ -46,104 +56,145 @@
           required
           placeholder="Calle Bella Vista"
         />
-      </div>
+      </div> -->
 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="horaEntrada">Horario de Entrada</label>
-          <input
-            name="horario_entrada"
-            [(ngModel)]="
-            this.hospitalesServices.seleccionarHospitales.horario_entrada
-            "
-            type="time"
-            class="form-control"
-            id="horaEntrada"
-            required            
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="horaSAlida">Horario de Salida</label>
-          <input
-            name="horario_salida"
-            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.horario_salida"
-            type="time"
-            class="form-control"
-            id="horaSAlida"
-            required            
-          />
-        </div>
-      </div>
-      <div  class="form-row">
-        <div class="form-group col-md-6">
-          <label for="exampleInputEmail1">Email</label>
-          <input
-            name="email"
-            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.email"
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            required
-            placeholder="Enter email"
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            name="pass"
-            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.pass"
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            required
-            placeholder="Password"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlFile1">Imagen del Hospital</label>
         <input
-          (change)="onUpload($event)"
-          required
-          type="file"
-          class="form-control-file"
-          id="exampleFormControlFile1"
-        />
-        <input
+          name="lat"
+          [(ngModel)]="this.hospitalesServices.seleccionarHospitales.lat"
           type="hidden"
-          name="foto"
-          #imagenFoto
-          [value]="urlFoto | async"
-          [(ngModel)]="this.hospitalesServices.seleccionarHospitales.foto"
+          #lat
         />
-        <!-- <input type="file" id="Logo" (change)="onUpload($event, cualEs = 'logo')"> -->
-        <div class="progress mt-3">
-          <div
-            class="progress-bar progress-bar-striped bg-success"
-            role="progressbar"
-            [style.width]="(uploadPercentFoto | async) + '%'"
-          ></div>
+        <input
+          name="lng"
+          [(ngModel)]="this.hospitalesServices.seleccionarHospitales.lng"
+          type="hidden"
+          #lng
+        />
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="horaEntrada">Horario de Entrada</label>
+            <input
+              name="horario_entrada"
+              [(ngModel)]="
+                this.hospitalesServices.seleccionarHospitales.horario_entrada
+              "
+              type="time"
+              class="form-control"
+              id="horaEntrada"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="horaSAlida">Horario de Salida</label>
+            <input
+              name="horario_salida"
+              [(ngModel)]="
+                this.hospitalesServices.seleccionarHospitales.horario_salida
+              "
+              type="time"
+              class="form-control"
+              id="horaSAlida"
+              required
+            />
+          </div>
         </div>
-      </div>
-      <div class="centreado" style="padding-top: 5%;">
-        <button
-          type="submit"
-          class="btn btn-danger"
-          *ngIf="
-            formSolicitud.valid == true && urlFoto | async;
-            else btnDisabled
-          "
-        >
-          Registrarse
-        </button>
-        <ng-template #btnDisabled>
-          <button type="submit" class="btn btn-danger" disabled="true">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              name="email"
+              [(ngModel)]="this.hospitalesServices.seleccionarHospitales.email"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              required
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              name="pass"
+              [(ngModel)]="this.hospitalesServices.seleccionarHospitales.pass"
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              required
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Imagen del Hospital</label>
+          <input
+            (change)="onUpload($event)"
+            required
+            type="file"
+            class="form-control-file"
+            id="exampleFormControlFile1"
+          />
+          <input
+            type="hidden"
+            name="foto"
+            #imagenFoto
+            [value]="urlFoto | async"
+            [(ngModel)]="this.hospitalesServices.seleccionarHospitales.foto"
+          />
+          <!-- <input type="file" id="Logo" (change)="onUpload($event, cualEs = 'logo')"> -->
+          <div class="progress mt-3">
+            <div
+              class="progress-bar progress-bar-striped bg-success"
+              role="progressbar"
+              [style.width]="(uploadPercentFoto | async) + '%'"
+            ></div>
+          </div>
+        </div>
+        <div class="centreado" style="padding-top: 5%;">
+          <agm-map
+            (mapClick)="agregarMarcador($event)"
+            [latitude]="marcadores.lat"
+            [longitude]="marcadores.lng"
+            [zoom]="15"
+          >
+            <agm-marker
+              [latitude]="marcadores.lat"
+              [longitude]="marcadores.lng"
+            >
+              <agm-info-window>
+                <strong>Titulo</strong>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum neque fugit, atque repudiandae animi sit doloribus
+                  molestias quam sapiente accusamus nam voluptatibus, nihil hic
+                  laborum ab et odit molestiae officia.
+                </p>
+                <div>
+                  <button class="btn btn-primary">Editar</button>
+                  <button class="btn btn-danger">Borrar</button>
+                </div>
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
+
+          <button
+            type="submit"
+            class="btn btn-danger"
+            *ngIf="
+              formSolicitud.valid == true && urlFoto | async;
+              else btnDisabled
+            "
+          >
             Registrarse
           </button>
-        </ng-template>
-      </div>
-    </form>
-  </div>
-</section>
+          <ng-template #btnDisabled>
+            <button type="submit" class="btn btn-danger" disabled="true">
+              Registrarse
+            </button>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>

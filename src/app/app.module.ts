@@ -34,6 +34,11 @@ import { AprobarcitasComponent } from './componets/aprobarcitas/aprobarcitas.com
 import {FullCalendarModule} from '@fullcalendar/angular';
 import { ListadeesperaComponent } from './components/listadeespera/listadeespera.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MapaComponent } from './components/hospitales/mapa/mapa.component';
+
+// Mapa
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +59,8 @@ import {HttpClientModule} from '@angular/common/http';
     FiltraSangrePipe,
     DonacionesComponent,
     AprobarcitasComponent,
-    ListadeesperaComponent
+    ListadeesperaComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +72,10 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFontAwesomeModule,
     FullCalendarModule,
     HttpClientModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCPc2a1KGTDaXosDJjtAJAn6yH5A2aKUG0'
+    })
   ],
 providers: [AngularFireAuth, AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent]
