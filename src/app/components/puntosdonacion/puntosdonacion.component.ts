@@ -21,7 +21,7 @@ export class PuntosdonacionComponent implements OnInit {
   estaLogeado: boolean = false;
 
   ciDonador: string;
-  hospitalReceptor: string;
+  hospitalReceptor: any;
   constructor(
     public hospitalesServices: HospitalesService,
     private authService: AuthService,
@@ -63,14 +63,22 @@ export class PuntosdonacionComponent implements OnInit {
       this.hospitales = resp;
     });
   }
-  enviarIdSolicitud(hospital: string) {
+  enviarIdSolicitud(hospital: any) {
     this.hospitalReceptor = hospital;
   }
 
   guardar(form: NgForm) {
     form.value.id_usuario = this.ciDonador;
-    form.value.hospital = this.hospitalReceptor;    
+    form.value.hospital = this.hospitalReceptor.hospital;    
     form.value.estado = false;    
+
+
+    form.value.email = this.hospitalReceptor.email;
+    form.value.foto = this.hospitalReceptor.foto;
+    form.value.lat = this.hospitalReceptor.lat;
+    form.value.lng = this.hospitalReceptor.lng;
+    form.value.telefono = this.hospitalReceptor.telefono;
+
     this.citas.agregarCitasRegistro(form.value);
     form.resetForm();
     Swal.fire({

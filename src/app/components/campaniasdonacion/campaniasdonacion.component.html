@@ -17,7 +17,7 @@
             
             data-toggle="modal"
             data-target="#exampleModal1"
-            (click)="enviarIdSolicitud(item.ci)"
+            (click)="enviarIdSolicitud(item)"
             *ngIf="estaLogeado == true"
             
           >
@@ -91,6 +91,58 @@
                     type="hidden"
                     [(ngModel)]="this.citas.seleccionarCitasRegistro.id_usuario"
                     name="id_usuario"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.apellido_m"
+                    name="apellido_m"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.apellido_p"
+                    name="apellido_p"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.cantidad_donadores"
+                    name="cantidad_donadores"
+                  />
+                  <!--
+                    <input
+                      type="hidden"
+                      [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.fecha_nac"
+                      name="fecha_nac"
+                    />
+                  -->
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.foto"
+                    name="foto"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.genero"
+                    name="genero"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.hospital"
+                    name="hospital"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.telefono"
+                    name="telefono"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.tipo_sangre"
+                    name="tipo_sangre"
+                  />
+                  <input
+                    type="hidden"
+                    [(ngModel)]="this.solicitudSangre.seleccionarSolicitudSangre.nombre"
+                    name="nombre"
                   />
                   <input
                     type="hidden"

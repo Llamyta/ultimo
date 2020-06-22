@@ -31,7 +31,7 @@ export class CitasService {
      }))
    }
 
-   agregarCitasRegistro(CitasRegistro: CitasInterface){
+   agregarCitasRegistro(CitasRegistro: any){
       this.registroCitasCollection.add(CitasRegistro);
    }
 

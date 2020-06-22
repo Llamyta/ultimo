@@ -32,7 +32,7 @@ export class CitasHospitalService {
      }))
    }
 
-   agregarCitasRegistro(CitasRegistro: CitasHospitalesInterface){
+   agregarCitasRegistro(CitasRegistro: any){
       this.registroCitasCollection.add(CitasRegistro);
    }
 

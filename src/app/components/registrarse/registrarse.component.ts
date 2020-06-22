@@ -39,7 +39,7 @@ export class RegistrarseComponent implements OnInit {
     public afAuth: AngularFireAuth,
     private router: Router,
     private authService: AuthService,
-    private personaServices: DataApiService,
+    public personaServices: DataApiService,
     private storage:AngularFireStorage
   ) {}
 
