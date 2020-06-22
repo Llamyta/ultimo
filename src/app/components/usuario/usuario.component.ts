@@ -15,6 +15,7 @@ export class UsuarioComponent implements OnInit {
 
   personaCompleta: any[]=[];
   fotoPersona: any;
+  email:any;
   constructor(
     public citasHospitales: CitasHospitalService,
     public citaspersonas: CitasService,
@@ -25,7 +26,10 @@ export class UsuarioComponent implements OnInit {
   ngOnInit() {
     this.authService.isAuth().subscribe(user => {
       this.fotoPersona = user.photoURL;
-      console.log(this.fotoPersona);
+      this.email=user.email;
+      console.log("Email del auth",this.email);
+
+
 
       // recupera hospitales
       this.persona.obtenerPersonaRegistro().subscribe(resp => {
@@ -43,7 +47,8 @@ export class UsuarioComponent implements OnInit {
           }
         });
       });
-
+      console.log(this.personaCompleta);
+      
       //  recupera citas personales
       this.persona.obtenerPersonaRegistro().subscribe(resp => {
         resp.forEach(element => {

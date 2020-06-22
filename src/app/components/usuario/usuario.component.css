@@ -1,6 +1,10 @@
 #seccion {
     padding: 10% 15% 10% 15% !important;
 }
+h6{
+    font-weight: bolder !important;
+
+}
 
 .col {
     display: flex !important;
@@ -8,13 +12,20 @@
     justify-content: center !important;
     min-height: 40vh !important;
 }
-
+.texto{
+    text-align: center;
+    padding-top:30px;
+}
 .centrear {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+.citas{
+    background-color: #1195ba69;
+    padding: 5px 0 5px 0;
+    border-radius: 2%;
+}
 p {
     font-weight: lighter;
 }

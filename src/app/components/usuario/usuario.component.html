@@ -5,23 +5,43 @@
                 <div class="row">
                     <div class="container">
                         <div class="row">
-                          <div class="col-md-7 col-sm-12 mt-5 mb-5">
-                            <div class="card justify-content-center" style="width: 30rem;">
-                                <div class="card-body">
-                                    <img src="../../../assets/images/perfil.png" class="img-fluid" style="padding-bottom: 10%; padding-top: 10%;">
+                            <div class="col-md-7 col-sm-12 mt-5 mb-5">
+                                <div class="card justify-content-center" style="width: 30rem;">
+                                    <div class="card-body" *ngFor="let item of personaCompleta">
+                                        <div >
+                                            <img src="../../../assets/images/person1.jpg" *ngIf="!item.foto"
+                                                class="card-img-top" alt="...">
+                                            <img src="{{item.foto}}" *ngIf="item.foto" class="card-img-top" alt="...">
+
+                                            <h5 style="color: #1195ba69;text-align: center;font-weight: bolder;padding-top: 3%;">Hola {{item.nombre}} Bienvenido</h5>
+                                        </div>
+                                        <div class="texto ">
+                                            <h6>Nombre Completo: {{item.nombre}} {{item.apellido_p}} {{item.apellido_m}}
+                                            </h6>
+                                            <h6>E-mail: {{item.email}}</h6>
+                                            <h6>Fecha de Nacimiento: {{item.fecha_nac}} </h6>
+                                            <h6>Tipo de Sangre: {{item.tipo_sangre}} </h6>
+                                            <h6 *ngIf="item.sangre == true">Registrado como: Donador de Sangre </h6>
+                                            <h6 *ngIf="item.organos == true">Registrado como: Donador de Organos </h6>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
-                          </div>
-                          <div class="col-md-5 col-sm-12 mt-5 mb-5">
-                            <div class="card justify-content-center" style="width: 30rem;">
-                                <div class="card-body">
-                                    <img src="../../../assets/images/perfil(2).png" class="img-fluid" style="padding-bottom: 10%; padding-top: 10%;">
+                            </div>
+                            <div class="col-md-5 col-sm-12 mt-5 mb-5">
+                                <div class="card justify-content-center" style="width: 30rem;">
+                                    <div class="card-body">
+                                        <h5 style="font-weight: bolder; text-align: center;">Citas Proximas</h5>
+                                        <div *ngFor="let item of citasHospitalesvar" class="texto">
+                                            <div class="citas">
+                                                <h6 style="color: white;">Hora: {{item.hora}}- Fecha: {{item.fecha}}-Hospital: Belga</h6>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
-                          </div>
-                          
+                            </div>
+
                         </div>
-                      </div>  
+                    </div>
                 </div>
             </div>
         </div>
