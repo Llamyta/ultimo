@@ -72,7 +72,7 @@ export class CampaniasdonacionComponent implements OnInit {
   }
   personaSolicitudDonador: any;
   enviarIdSolicitud(item: any) {
-    this.ciSolicitud = item.id;    
+    this.ciSolicitud = item.ci;    
     this.personaSolicitudDonador = item;
     console.log("hola",item);    
   }

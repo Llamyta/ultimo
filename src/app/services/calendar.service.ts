@@ -32,4 +32,21 @@ export class CalendarService  {
       }))
     );
   }
+
+  ObtieneCitasPersonalesPorHospital(hospital: string){
+    return this.db
+      .collection("CitasPersonales", (ref) =>
+        ref.where("hospital", "==", hospital)
+      )
+      .snapshotChanges()
+      .pipe(
+        map((action) =>
+          action.map((a) => {
+            const data = a.payload.doc.data() as any;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          })
+        )
+      );
+  }
 }

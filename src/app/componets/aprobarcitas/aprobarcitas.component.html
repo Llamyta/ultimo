@@ -16,7 +16,7 @@
         </section>
       </div>
       <div class="col-6 col-md-5" style="padding: 20% 0 10% 0;">
-        <table class="table table-hover table-dark">
+        <table class="table table-hover table-dark"  *ngIf="citas.length > 0; else noCitas">
             <thead>
               <tr>
                 <th scope="col">Nombre Completo</th>
@@ -25,16 +25,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of calendarEvents">
-                <td>{{item.title}}</td>
+              <tr *ngFor="let item of citas">
+                <td > {{item.title}}</td>
                 <td>{{item.id_solicitud}}</td>
                 <td>
-                    <button type="button" class="btn btn-info btn-sm" (click)="ModificarCitas(item)">Realizada</button>
+                    <!-- <button type="button" class="btn btn-info btn-sm" (click)="ModificarCitas(item)">Realizada</button> -->
                     <button type="button" class="btn btn-danger btn-sm" (click)="borrarCitas(item.id)">Borrar</button>
                 </td>
               </tr>
             </tbody>
           </table>
+          <ng-template #noCitas>
+            <div >
+              <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading text-center">No existen Citas</h4>                            
+              </div>
+            </div>
+          </ng-template>
       </div>
     </div>
 </div>

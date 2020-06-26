@@ -32,6 +32,8 @@ export class HospitalesService {
      }))
    }
 
+   
+
    agregarHospitalRegistro(HospitalRegistro: HospitalesInterface){
       this.registroHospitalCollection.add(HospitalRegistro);
    }

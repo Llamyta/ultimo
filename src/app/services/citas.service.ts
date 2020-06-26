@@ -44,8 +44,7 @@ export class CitasService {
    }
 
    borrarCitasRegistro(idCitasRegistro: string): void {
-     this.resgistroCitasDOC = this.firebase.doc<CitasInterface>(`CitasPersonales/${idCitasRegistro}`);
-     console.log(idCitasRegistro, "service");
+     this.resgistroCitasDOC = this.firebase.doc<CitasInterface>(`CitasPersonales/${idCitasRegistro}`);     
      this.resgistroCitasDOC.delete();
    }   
 }

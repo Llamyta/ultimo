@@ -58,7 +58,7 @@ export class UsuarioComponent implements OnInit {
               citasHosp.forEach(element2 => {
                 if (this.ciPersona == element2.id_usuario) {
                   this.citasHospitalesvar.push(element2);
-                  console.log(this.citasHospitalesvar);
+                  // console.log(this.citasHospitalesvar);
                 }
               });
             });
